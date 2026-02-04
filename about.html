@@ -2,28 +2,204 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>من نحن | هيلز هوم</title>
+  <title>المشاريع | شركة هيلز هوم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>من نحن</h1>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brandName">شركة هيلز هوم للمقاولات العامة</div>
+      <div class="brandSub">مشاريع الطرق • الأسفلت • البنية التحتية</div>
+    </div>
+
+    <div class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="services.html">الخدمات</a>
+      <a class="active" href="projects.html">المشاريع</a>
+      <a href="contact.html">التواصل</a>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
+  <h2>مشاريعنا — نتائج تُرى وتدوم</h2>
   <p>
-    شركة هيلز هوم للمقاولات العامة شركة سعودية متخصصة
-    في أعمال الإنشاءات والبنية التحتية وأعمال الطرق
-    والأسفلت، نعمل باحترافية عالية ونلتزم بالجودة
-    والمواعيد.
+    ننفّذ أعمال الطرق والأسفلت والتربة والتخطيط والبنية التحتية بأسلوب منظم وتشطيب مهيب.
+    اختر التصنيف لتصفية المشاريع بسرعة.
   </p>
+  <div class="ceo">الرئيس التنفيذي: م/ علاء همام</div>
+</section>
 
-  <div class="ceo">
-    الرئيس التنفيذي<br>
-    م/ علاء همام
+<!-- Stats -->
+<section class="statsGrid">
+  <div class="stat"><b>تنفيذ احترافي</b><span>إشراف وجودة في كل مرحلة</span></div>
+  <div class="stat"><b>تسليم منظم</b><span>مظهر نهائي يليق بالشركات الكبيرة</span></div>
+  <div class="stat"><b>سلامة أولاً</b><span>تخطيط واضح ودهانات دقيقة</span></div>
+  <div class="stat"><b>جاهزية كاملة</b><span>من التأسيس حتى التخطيط</span></div>
+</section>
+
+<!-- Filters -->
+<section class="filters" aria-label="تصنيف المشاريع">
+  <button class="fbtn active" data-filter="all">الكل</button>
+  <button class="fbtn" data-filter="asphalt">أسفلت</button>
+  <button class="fbtn" data-filter="earth">تربة وتأسيس</button>
+  <button class="fbtn" data-filter="marking">تخطيط ودهانات</button>
+  <button class="fbtn" data-filter="infra">بنية تحتية</button>
+</section>
+
+<!-- Projects -->
+<section class="containerX">
+  <div class="projectsGrid" id="grid">
+
+    <article class="projCard" data-cat="asphalt"
+      data-title="سفلتة طريق / مدخل"
+      data-desc="تسوية + ضبط ميول + طبقة أسفلت نهائية بتشطيب احترافي."
+      data-img="assets/p1.svg">
+      <img src="assets/p1.svg" alt="سفلتة طريق / مدخل">
+      <div class="projInfo">
+        <h3>سفلتة طريق / مدخل <span class="badge">أسفلت</span></h3>
+        <p>تشطيب قوي مع ضبط المناسيب والميول.</p>
+        <div class="projMeta"><span class="badge">مناسيب</span><span class="badge">تشطيب</span></div>
+      </div>
+    </article>
+
+    <article class="projCard" data-cat="asphalt"
+      data-title="مواقف سيارات"
+      data-desc="تنفيذ مواقف منظمة مع جاهزية التخطيط والدهانات للمسارات."
+      data-img="assets/p2.svg">
+      <img src="assets/p2.svg" alt="مواقف سيارات">
+      <div class="projInfo">
+        <h3>مواقف سيارات <span class="badge">أسفلت</span></h3>
+        <p>تنظيم واضح وتجهيز مثالي للدهانات.</p>
+        <div class="projMeta"><span class="badge">تنظيم</span><span class="badge">سلامة</span></div>
+      </div>
+    </article>
+
+    <article class="projCard" data-cat="earth"
+      data-title="أعمال التربة والتأسيس"
+      data-desc="صبيز / بيس كورس + دمك + تجهيز قاعدة قوية قبل السفلتة."
+      data-img="assets/p3.svg">
+      <img src="assets/p3.svg" alt="أعمال التربة والتأسيس">
+      <div class="projInfo">
+        <h3>أعمال التربة والتأسيس <span class="badge">تربة</span></h3>
+        <p>قاعدة قوية تضمن جودة السفلتة.</p>
+        <div class="projMeta"><span class="badge">صبيز</span><span class="badge">بيس كورس</span><span class="badge">دمك</span></div>
+      </div>
+    </article>
+
+    <article class="projCard" data-cat="marking"
+      data-title="تخطيط ودهانات الطرق"
+      data-desc="خطوط ومسارات ورموز تنظيمية للمواقف والطرق وفق معايير واضحة."
+      data-img="assets/p4.svg">
+      <img src="assets/p4.svg" alt="تخطيط ودهانات الطرق">
+      <div class="projInfo">
+        <h3>تخطيط ودهانات الطرق <span class="badge">تخطيط</span></h3>
+        <p>إرشادات واضحة ونتيجة نهائية ممتازة.</p>
+        <div class="projMeta"><span class="badge">خطوط</span><span class="badge">رموز</span><span class="badge">إرشادات</span></div>
+      </div>
+    </article>
+
+    <article class="projCard" data-cat="infra"
+      data-title="ساحات ومداخل"
+      data-desc="تنفيذ ساحات ومداخل بمظهر مهيب مع تشطيب قوي للاستخدام اليومي."
+      data-img="assets/p5.svg">
+      <img src="assets/p5.svg" alt="ساحات ومداخل">
+      <div class="projInfo">
+        <h3>ساحات ومداخل <span class="badge">بنية</span></h3>
+        <p>تحمل عالي ومظهر يليق بالمواقع الكبيرة.</p>
+        <div class="projMeta"><span class="badge">تحمل</span><span class="badge">مظهر</span></div>
+      </div>
+    </article>
+
+    <article class="projCard" data-cat="asphalt"
+      data-title="طرق داخلية"
+      data-desc="طرق داخلية للمواقع والمزارع والاستراحات مع تسليم مرتب ونظيف."
+      data-img="assets/p6.svg">
+      <img src="assets/p6.svg" alt="طرق داخلية">
+      <div class="projInfo">
+        <h3>طرق داخلية <span class="badge">أسفلت</span></h3>
+        <p>مناسبة للمواقع والمزارع والاستراحات.</p>
+        <div class="projMeta"><span class="badge">مواقع</span><span class="badge">مزارع</span><span class="badge">استراحات</span></div>
+      </div>
+    </article>
+
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" aria-hidden="true">
+  <div class="lightboxBox" role="dialog" aria-modal="true">
+    <div class="lbTop">
+      <b id="lbTitle">عرض</b>
+      <button class="lbClose" id="lbClose">إغلاق ✕</button>
+    </div>
+    <img id="lbImg" src="" alt="">
+    <div class="lightboxInfo">
+      <h3 id="lbH">—</h3>
+      <p id="lbP">—</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>📞 0540671117</div>
+  <div>© 2026 شركة هيلز هوم للمقاولات العامة</div>
+</footer>
+
+<script>
+  // Filter
+  const buttons = document.querySelectorAll('.fbtn');
+  const cards = document.querySelectorAll('.projCard');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+
+      cards.forEach(c => {
+        const show = (f === 'all') || (c.dataset.cat === f);
+        c.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // Lightbox
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbH = document.getElementById('lbH');
+  const lbP = document.getElementById('lbP');
+  const closeBtn = document.getElementById('lbClose');
+
+  function openLB(card){
+    const t = card.dataset.title || 'مشروع';
+    const d = card.dataset.desc || '';
+    const img = card.dataset.img || '';
+
+    lbTitle.textContent = 'معاينة المشروع';
+    lbH.textContent = t;
+    lbP.textContent = d;
+    lbImg.src = img;
+    lbImg.alt = t;
+
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function closeLB(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+  }
+
+  cards.forEach(card => card.addEventListener('click', () => openLB(card)));
+  closeBtn.addEventListener('click', closeLB);
+  lb.addEventListener('click', (e) => { if(e.target === lb) closeLB(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLB(); });
+</script>
 
 </body>
 </html>
