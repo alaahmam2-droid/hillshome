@@ -1,115 +1,229 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>مشاريعنا | شركة هيلز هوم</title>
+<title>مشاريعنا | شركة هيلز هوم للمقاولات العامة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+
 <style>
-body{
-  margin:0;
-  font-family:Tahoma, Arial;
-  background:#0b1220;
-  color:#fff;
-}
-header{
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  padding:40px 20px;
+:root{--gold:#f59e0b;--bg:#0b1220;--card:#0f172a;--text2:#cbd5e1;--line:#1e293b}
+body{margin:0;background:var(--bg);color:#fff;font-family:Tahoma,Arial}
+a{text-decoration:none}
+
+.projects-header{
+  background:linear-gradient(rgba(2,6,23,.78),rgba(2,6,23,.78)),
+  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=60");
+  background-size:cover;background-position:center;
+  padding:70px 16px 40px;
   text-align:center;
+  border-bottom:4px solid var(--gold);
 }
-header h1{
-  font-size:32px;
-  margin-bottom:10px;
+.projects-header h1{font-size:40px;margin:0 0 10px}
+.projects-header p{color:var(--text2);margin:0;line-height:1.9;max-width:900px;margin-inline:auto}
+.ceoLine{margin-top:14px;color:#fbbf24;font-weight:800}
+
+.wrap{max-width:1100px;margin:auto;padding:18px 16px 0}
+
+/* Stats */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;margin-top:-22px;
 }
-header p{
-  color:#cbd5e1;
+.stat{
+  background:#020617;border:1px solid var(--line);border-radius:16px;
+  padding:16px 16px;
 }
-.projects{
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
+.stat b{display:block;font-size:26px}
+.stat span{color:var(--text2);font-size:13px}
+
+/* CTA */
+.ctaRow{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  margin:18px 0 8px;
 }
-.grid{
+.btn{
+  display:inline-block;
+  padding:12px 16px;border-radius:14px;
+  font-weight:900;
+  border:1px solid var(--line);
+  color:#fff;background:#020617;
+}
+.btn:hover{border-color:var(--gold)}
+.btnGold{background:var(--gold);color:#111827;border-color:var(--gold)}
+.btnGhost{background:transparent;border-color:var(--gold)}
+
+/* Projects grid */
+.projects-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
+  gap:18px;
+  padding:18px 0 10px;
 }
-.card{
-  background:#111827;
-  border-radius:14px;
+.project-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
-  transition:.3s;
+  transition:.25s;
 }
-.card:hover{
-  transform:translateY(-8px);
+.project-card:hover{transform:translateY(-7px);border-color:var(--gold)}
+.project-card img{width:100%;height:200px;object-fit:cover;display:block}
+.project-content{padding:18px}
+.badge{
+  display:inline-block;background:var(--gold);color:#111827;
+  padding:6px 12px;border-radius:999px;font-size:12px;font-weight:900;
 }
-.card img{
+.project-content h3{margin:10px 0 8px}
+.project-content p{margin:0;color:var(--text2);font-size:14px;line-height:1.9}
+
+/* Quote form */
+.formBox{
+  margin:18px 0 40px;
+  background:#020617;border:1px solid var(--line);
+  border-radius:18px;padding:18px;
+}
+.formBox h2{margin:0 0 8px}
+.formBox p{margin:0 0 14px;color:var(--text2);line-height:1.9}
+.formGrid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+}
+.inp, textarea{
   width:100%;
-  height:200px;
-  object-fit:cover;
+  background:#0b1220;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 12px;
+  color:#fff;
+  font-family:Tahoma,Arial;
+  outline:none;
 }
-.card .content{
-  padding:20px;
-}
-.card h3{
-  margin:0 0 10px;
-  color:#facc15;
-}
-.card p{
-  font-size:14px;
-  color:#d1d5db;
-  line-height:1.8;
-}
+textarea{min-height:110px;resize:vertical}
+.inp:focus, textarea:focus{border-color:var(--gold)}
+.formActions{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+.smallNote{color:#94a3b8;font-size:12px;margin-top:10px}
 footer{
-  background:#020617;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-  color:#94a3b8;
+  background:#020617;border-top:1px solid var(--line);
+  text-align:center;padding:18px;color:#94a3b8;font-size:14px
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>مشاريع شركة هيلز هوم</h1>
-  <p>نماذج من أعمالنا في مجال الإنشاءات وأعمال الطرق والأسفلت</p>
+<header class="projects-header">
+  <h1>مشاريعنا</h1>
+  <p>نماذج من أعمال شركة هيلز هوم في الطرق والأسفلت والبنية التحتية والتخطيط — تشطيب مهيب، جودة عالية، وتسليم منظم.</p>
+  <div class="ceoLine">الرئيس التنفيذي: م/ علاء همام</div>
+
+  <div class="ctaRow">
+    <a class="btn btnGold" href="#quote">اطلب عرض سعر</a>
+    <a class="btn btnGhost" href="tel:0540671117">اتصال مباشر</a>
+    <a class="btn" target="_blank" href="https://wa.me/966540671117?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20%D8%A3%D8%B3%D9%81%D9%84%D8%AA%20%D9%88%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7">واتساب</a>
+  </div>
 </header>
 
-<section class="projects">
-  <div class="grid">
+<div class="wrap">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1590642916650-7ad7b0a9a60a">
-      <div class="content">
-        <h3>مشروع سفلتة طرق</h3>
-        <p>تنفيذ أعمال سفلتة متكاملة تشمل التأسيس، البنية التحتية، الطبقات الإسفلتية وفق أعلى المواصفات.</p>
+  <!-- Stats (غيّر الأرقام لاحقاً) -->
+  <section class="stats">
+    <div class="stat"><b>+120</b><span>مشروع منفذ</span></div>
+    <div class="stat"><b>+70</b><span>عميل (حكومي/خاص)</span></div>
+    <div class="stat"><b>+300</b><span>ألف م² أسفلت</span></div>
+    <div class="stat"><b>جودة</b><span>تشطيب وتسليم منظم</span></div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects-grid">
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1604014237744-27c1e6f0f9ae?auto=format&fit=crop&w=1600&q=60">
+      <div class="project-content">
+        <span class="badge">أعمال أسفلت</span>
+        <h3>سفلتة طرق رئيسية</h3>
+        <p>تنفيذ سفلتة متكاملة تشمل التأسيس والطبقات الإسفلتية وفق أعلى المواصفات.</p>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
-      <div class="content">
-        <h3>مشروع بنية تحتية</h3>
-        <p>أعمال حفر، تسوية، صبيز وبيس كورس وتجهيز مواقع المشاريع الكبرى.</p>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9d9b3b?auto=format&fit=crop&w=1600&q=60">
+      <div class="project-content">
+        <span class="badge">بنية تحتية</span>
+        <h3>أعمال البنية التحتية</h3>
+        <p>تجهيز وتنفيذ الأعمال الداعمة لمشاريع الطرق والمرافق حسب احتياج الموقع.</p>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f1">
-      <div class="content">
-        <h3>تخطيط ودهانات طرق</h3>
-        <p>تنفيذ تخطيط الطرق بدهانات عالية الجودة ومعايير سلامة مرورية معتمدة.</p>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=60">
+      <div class="project-content">
+        <span class="badge">مواقف سيارات</span>
+        <h3>سفلتة مواقف ومجمعات</h3>
+        <p>تنفيذ مواقف وساحات للمجمعات والمنشآت بتشطيب قوي ومنظم.</p>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581092919531-ecf3f89c43c7">
-      <div class="content">
-        <h3>مواقف وساحات</h3>
-        <p>تنفيذ ساحات ومواقف سيارات للمشاريع الحكومية والخاصة.</p>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1590496793929-36417d3117cd?auto=format&fit=crop&w=1600&q=60">
+      <div class="project-content">
+        <span class="badge">دهانات طرق</span>
+        <h3>تخطيط ودهانات الطرق</h3>
+        <p>خطوط مرورية وإرشادية واضحة وفق معايير السلامة.</p>
       </div>
     </div>
 
-  </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="formBox" id="quote">
+    <h2>اطلب عرض سعر خلال دقيقة</h2>
+    <p>اكتب تفاصيل المشروع وسيتم فتح واتساب برسالة جاهزة تُرسل لنا مباشرة.</p>
+
+    <div class="formGrid">
+      <input class="inp" id="name" placeholder="اسمك" />
+      <input class="inp" id="city" placeholder="المدينة / المنطقة" />
+      <input class="inp" id="type" placeholder="نوع العمل (أسفلت / تخطيط / تربة)" />
+      <input class="inp" id="area" placeholder="المساحة التقريبية (م²)" />
+      <textarea id="details" placeholder="تفاصيل إضافية (موقع العمل، المدة، أي ملاحظات)"></textarea>
+    </div>
+
+    <div class="formActions">
+      <a class="btn btnGold" href="#" id="sendWA">إرسال على واتساب</a>
+      <a class="btn" href="tel:0540671117">اتصال</a>
+    </div>
+    <div class="smallNote">📞 رقم التواصل: 0540671117</div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
+</footer>
+
+<script>
+  const phone = "966540671117";
+  document.getElementById("sendWA").addEventListener("click", function(e){
+    e.preventDefault();
+    const name = document.getElementById("name").value || "بدون اسم";
+    const city = document.getElementById("city").value || "غير محدد";
+    const type = document.getElementById("type").value || "غير محدد";
+    const area = document.getElementById("area").value || "غير محدد";
+    const details = document.getElementById("details").value || "—";
+
+    const msg =
+`السلام عليكم
+أنا: ${name}
+المدينة: ${city}
+نوع العمل: ${type}
+المساحة: ${area}
+تفاصيل: ${details}
+أرغب بعرض سعر.`;
+
+    const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>
