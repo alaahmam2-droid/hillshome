@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="as" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <path d="M560,820 C640,520 760,520 840,820" fill="url(#as)"/>
+  <path d="M700,120 L720,120 L740,220 L720,220 Z" fill="#f59e0b" opacity="0.95"/>
+  <path d="M705,260 L735,260 L760,380 L680,380 Z" fill="#f59e0b" opacity="0.95"/>
+  <path d="M710,430 L730,430 L745,520 L695,520 Z" fill="#f59e0b" opacity="0.95"/>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">سفلتة طريق / مدخل</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">تشطيب قوي • منا سيب دقيقة • مظهر مهيب</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <rect x="120" y="210" width="1160" height="470" rx="28" fill="#0f172a" stroke="#1e293b" stroke-width="6"/>
+  <g opacity="0.95" stroke="#f59e0b" stroke-width="10">
+    <line x1="260" y1="260" x2="260" y2="640"/>
+    <line x1="430" y1="260" x2="430" y2="640"/>
+    <line x1="600" y1="260" x2="600" y2="640"/>
+    <line x1="770" y1="260" x2="770" y2="640"/>
+    <line x1="940" y1="260" x2="940" y2="640"/>
+    <line x1="1110" y1="260" x2="1110" y2="640"/>
+  </g>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">مواقف سيارات</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">تنظيم • تخطيط • جاهزية دهانات</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <rect x="140" y="240" width="1120" height="80" rx="18" fill="#1f2937"/>
+  <rect x="140" y="340" width="1120" height="90" rx="18" fill="#334155"/>
+  <rect x="140" y="450" width="1120" height="100" rx="18" fill="#475569"/>
+  <rect x="140" y="570" width="1120" height="110" rx="18" fill="#64748b"/>
+  <g fill="#f59e0b" opacity="0.95">
+    <circle cx="220" cy="280" r="12"/><circle cx="260" cy="280" r="12"/><circle cx="300" cy="280" r="12"/>
+  </g>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">أعمال التربة والتأسيس</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">صبيز • بيس كورس • دمك وتجهيز قاعدة</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <path d="M0,560 C280,460 520,640 760,560 C980,490 1160,590 1400,520 L1400,800 L0,800 Z" fill="#0b1220"/>
+  <g stroke="#f59e0b" stroke-width="14" opacity="0.95">
+    <line x1="140" y1="585" x2="1260" y2="545"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="10" opacity="0.9" stroke-dasharray="35 25">
+    <line x1="220" y1="650" x2="1180" y2="615"/>
+  </g>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">تخطيط ودهانات الطرق</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">خطوط • مسارات • رموز تنظيمية</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <rect x="140" y="240" width="1120" height="520" rx="30" fill="#0b1220" stroke="#1e293b" stroke-width="6"/>
+  <g fill="#f59e0b" opacity="0.95">
+    <rect x="220" y="320" width="220" height="26" rx="13"/>
+    <rect x="220" y="380" width="360" height="26" rx="13"/>
+    <rect x="220" y="440" width="300" height="26" rx="13"/>
+  </g>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">ساحات ومداخل</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">مظهر نهائي مهيب • تحمل عالي</text>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#g)"/>
+  <path d="M520,800 C590,520 810,520 880,800" fill="#0f172a" stroke="#1e293b" stroke-width="6"/>
+  <g stroke="#f59e0b" stroke-width="12" opacity="0.95" stroke-dasharray="36 26">
+    <line x1="700" y1="120" x2="700" y2="740"/>
+  </g>
+  <text x="70" y="110" fill="#ffffff" font-size="46" font-family="Tahoma" font-weight="700">طرق داخلية</text>
+  <text x="70" y="165" fill="#cbd5e1" font-size="28" font-family="Tahoma">للمواقع والمزارع والاستراحات</text>
+</svg>
