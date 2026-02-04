@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alaahmam2-droid.github.io/hillshome/sitemap.xml
