@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المشاريع | شركة هيلز هوم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brandName">شركة هيلز هوم للمقاولات العامة</div>
+      <div class="brandSub">مشاريع الطرق • الأسفلت • البنية التحتية</div>
+    </div>
+
+    <div class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="services.html">الخدمات</a>
+      <a class="active" href="projects.html">المشاريع</a>
+      <a href="contact.html">التواصل</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>مشاريعنا — تنفيذ يظهر من أول نظرة</h2>
+  <p>
+    أعمالنا تشمل سفلتة الطرق والمواقف والساحات، تجهيز التربة (صبيز/بيس كورس)،
+    ثم طبقات الأسفلت والتخطيط والدهانات — بتنفيذ منظم وتشطيب نهائي يليق بالشركات الكبرى.
+  </p>
+  <div class="ceo">الرئيس التنفيذي: م/ علاء همام</div>
+</section>
+
+<section class="containerX">
+  <div class="projectsGrid">
+
+    <article class="projCard">
+      <img src="assets/p1.svg" alt="سفلتة طريق / مدخل">
+      <div class="projInfo">
+        <h3>سفلتة طريق / مدخل</h3>
+        <p>تسوية + ضبط ميول + طبقة أسفلت نهائية بتشطيب احترافي.</p>
+        <div class="tags">
+          <span>أسفلت</span><span>مناسيب</span><span>تشطيب</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="projCard">
+      <img src="assets/p2.svg" alt="مواقف سيارات">
+      <div class="projInfo">
+        <h3>مواقف سيارات</h3>
+        <p>تنفيذ مواقف منظمة مع جاهزية التخطيط والدهانات للمسارات.</p>
+        <div class="tags">
+          <span>مواقف</span><span>تنظيم</span><span>سلامة</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="projCard">
+      <img src="assets/p3.svg" alt="أعمال التربة والتأسيس">
+      <div class="projInfo">
+        <h3>أعمال التربة والتأسيس</h3>
+        <p>صبيز / بيس كورس + دمك + تجهيز قاعدة قوية قبل السفلتة.</p>
+        <div class="tags">
+          <span>صبيز</span><span>بيس كورس</span><span>دمك</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="projCard">
+      <img src="assets/p4.svg" alt="تخطيط ودهانات الطرق">
+      <div class="projInfo">
+        <h3>تخطيط ودهانات الطرق</h3>
+        <p>خطوط ومسارات ورموز تنظيمية للمواقف والطرق وفق معايير واضحة.</p>
+        <div class="tags">
+          <span>دهانات</span><span>خطوط</span><span>إرشادات</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="projCard">
+      <img src="assets/p5.svg" alt="ساحات ومداخل">
+      <div class="projInfo">
+        <h3>ساحات ومداخل</h3>
+        <p>تنفيذ ساحات ومداخل بمظهر مهيب مع تشطيب قوي للاستخدام اليومي.</p>
+        <div class="tags">
+          <span>ساحات</span><span>مداخل</span><span>تحمل</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="projCard">
+      <img src="assets/p6.svg" alt="طرق داخلية">
+      <div class="projInfo">
+        <h3>طرق داخلية</h3>
+        <p>طرق داخلية للمواقع والمزارع والاستراحات مع تسليم مرتب ونظيف.</p>
+        <div class="tags">
+          <span>طرق داخلية</span><span>مزارع</span><span>استراحات</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <div>📞 0540671117</div>
+  <div>© 2026 شركة هيلز هوم للمقاولات العامة</div>
+</footer>
+
+</body>
+</html>
