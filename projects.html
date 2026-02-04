@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مشاريعنا | شركة هيلز هوم</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:#0b1220;
+  color:#fff;
+}
+header{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  padding:40px 20px;
+  text-align:center;
+}
+header h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+header p{
+  color:#cbd5e1;
+}
+.projects{
+  padding:60px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.card{
+  background:#111827;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+}
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.card .content{
+  padding:20px;
+}
+.card h3{
+  margin:0 0 10px;
+  color:#facc15;
+}
+.card p{
+  font-size:14px;
+  color:#d1d5db;
+  line-height:1.8;
+}
+footer{
+  background:#020617;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>مشاريع شركة هيلز هوم</h1>
+  <p>نماذج من أعمالنا في مجال الإنشاءات وأعمال الطرق والأسفلت</p>
+</header>
+
+<section class="projects">
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1590642916650-7ad7b0a9a60a">
+      <div class="content">
+        <h3>مشروع سفلتة طرق</h3>
+        <p>تنفيذ أعمال سفلتة متكاملة تشمل التأسيس، البنية التحتية، الطبقات الإسفلتية وفق أعلى المواصفات.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+      <div class="content">
+        <h3>مشروع بنية تحتية</h3>
+        <p>أعمال حفر، تسوية، صبيز وبيس كورس وتجهيز مواقع المشاريع الكبرى.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f1">
+      <div class="content">
+        <h3>تخطيط ودهانات طرق</h3>
+        <p>تنفيذ تخطيط الطرق بدهانات عالية الجودة ومعايير سلامة مرورية معتمدة.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581092919531-ecf3f89c43c7">
+      <div class="content">
+        <h3>مواقف وساحات</h3>
+        <p>تنفيذ ساحات ومواقف سيارات للمشاريع الحكومية والخاصة.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © شركة هيلز هوم للمقاولات العامة – جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
