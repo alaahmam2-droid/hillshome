@@ -1,235 +1,209 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تواصل معنا | شركة هيلز هوم للمقاولات العامة</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تواصل معنا | شركة هيلز هوم للمقاولات العامة</title>
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#0f1a33;
-      --panel2:#101f3d;
-      --text:#ffffff;
-      --muted:#c8d1e6;
-      --brand:#f0a500;
-      --line:rgba(255,255,255,.10);
-      --shadow:0 12px 35px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Tahoma, Arial;
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
-        radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
-        linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
-      color:var(--text);
-    }
-    a{color:inherit}
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#0f1a33;
+  --panel2:#101f3d;
+  --text:#ffffff;
+  --muted:#c8d1e6;
+  --brand:#f0a500;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 12px 35px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
+    linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
+  color:var(--text);
+}
+a{color:inherit}
 
-    /* Header */
-    .header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background:rgba(7,12,23,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .header .wrap{
-      max-width:1100px; margin:auto;
-      padding:14px 16px;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-    }
-    .brand{display:flex; flex-direction:column; gap:4px;}
-    .brand strong{font-size:16px; letter-spacing:.2px}
-    .brand span{font-size:12px; color:var(--muted)}
-    .nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
-    .nav a{
-      text-decoration:none;
-      padding:9px 12px;
-      border:1px solid var(--line);
-      border-radius:10px;
-      font-size:13px;
-      background:rgba(255,255,255,.04);
-    }
-    .nav a:hover{border-color:rgba(240,165,0,.55)}
-    .nav a.active{
-      border-color:rgba(240,165,0,.75);
-      box-shadow:0 0 0 3px rgba(240,165,0,.10);
-    }
+/* Header */
+.header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background:rgba(7,12,23,.72);
+  border-bottom:1px solid var(--line);
+}
+.header .wrap{
+  max-width:1100px; margin:auto;
+  padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{display:flex; flex-direction:column; gap:4px;}
+.brand strong{font-size:16px; letter-spacing:.2px}
+.brand span{font-size:12px; color:var(--muted)}
+.nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+.nav a{
+  text-decoration:none;
+  padding:9px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font-size:13px;
+  background:rgba(255,255,255,.04);
+}
+.nav a:hover{border-color:rgba(240,165,0,.55)}
+.nav a.active{
+  border-color:rgba(240,165,0,.75);
+  box-shadow:0 0 0 3px rgba(240,165,0,.10);
+}
 
-    /* Hero */
-    .hero{
-      max-width:1100px; margin:auto;
-      padding:56px 16px 18px;
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
-    }
-    @media(max-width:900px){ .hero{grid-template-columns:1fr} }
-    .heroCard{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(240,165,0,.35);
-      background:rgba(240,165,0,.08);
-      color:#ffd27a;
-      font-size:12px;
-      margin-bottom:14px;
-    }
-    .hero h1{margin:0 0 10px; font-size:32px}
-    .hero p{margin:0; color:var(--muted); line-height:1.9}
+/* Layout */
+.container{max-width:1100px; margin:auto; padding:0 16px;}
+.hero{
+  padding:56px 0 18px;
+  display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+}
+@media(max-width:900px){ .hero{grid-template-columns:1fr} }
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.kicker{
+  display:inline-flex; gap:8px; align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(240,165,0,.35);
+  background:rgba(240,165,0,.08);
+  color:#ffd27a;
+  font-size:12px;
+  margin-bottom:12px;
+}
+h1{margin:0 0 10px; font-size:32px}
+h2{margin:0 0 12px; font-size:18px; color:#ffe2a5}
+p{margin:0; color:var(--muted); line-height:1.9; font-size:13px}
 
-    .badge{
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-    }
-    .badge b{color:var(--brand)}
-    .badge p{margin:8px 0 0; color:var(--muted); line-height:1.8; font-size:13px}
+/* Buttons */
+.cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(240,165,0,.55);
+  background:rgba(240,165,0,.12);
+  text-decoration:none;
+  font-size:13px;
+  cursor:pointer;
+}
+.btn:hover{background:rgba(240,165,0,.18)}
+.btn.secondary{
+  border-color:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+}
+.btn.whatsapp{
+  border-color:rgba(37,211,102,.65);
+  background:rgba(37,211,102,.10);
+}
 
-    /* Section */
-    .section{
-      max-width:1100px; margin:auto;
-      padding:18px 16px 0;
-      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
-    }
-    @media(max-width:900px){ .section{grid-template-columns:1fr} }
+/* Grid section */
+.grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+  padding:18px 0 0;
+}
+@media(max-width:900px){ .grid{grid-template-columns:1fr} }
+.small{color:var(--muted); font-size:12px; line-height:1.8; margin-top:10px}
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .card h2{margin:0 0 10px; font-size:18px; color:#ffe2a5}
-    .card p{margin:0; color:var(--muted); line-height:1.9; font-size:13px}
+/* Form */
+.formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+@media(max-width:700px){ .formRow{grid-template-columns:1fr} }
+input, textarea, select{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:#fff;
+  font-family:Tahoma, Arial;
+  outline:none;
+}
+textarea{min-height:120px; resize:vertical}
 
-    /* Buttons */
-    .cta{margin:14px 0 0; display:flex; gap:10px; flex-wrap:wrap;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid rgba(240,165,0,.55);
-      background:rgba(240,165,0,.12);
-      text-decoration:none;
-      font-size:13px;
-      cursor:pointer;
-    }
-    .btn:hover{background:rgba(240,165,0,.18)}
-    .btn.secondary{
-      border-color:rgba(255,255,255,.18);
-      background:rgba(255,255,255,.04);
-    }
-    .btn.whatsapp{
-      border-color:rgba(37,211,102,.65);
-      background:rgba(37,211,102,.10);
-    }
+/* Map */
+.mapWrap{
+  margin-top:12px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+}
+.mapWrap iframe{
+  width:100%;
+  height:320px;
+  border:0;
+  display:block;
+}
 
-    /* Form */
-    .formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
-    @media(max-width:700px){ .formRow{grid-template-columns:1fr} }
-    input, textarea{
-      width:100%;
-      padding:12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:#fff;
-      font-family:Tahoma, Arial;
-      outline:none;
-    }
-    textarea{min-height:120px; resize:vertical}
-    .note{margin-top:10px; color:var(--muted); font-size:12px; line-height:1.8}
+/* Footer */
+footer{
+  margin-top:34px;
+  border-top:1px solid var(--line);
+  background:rgba(7,12,23,.72);
+}
+footer .wrap{
+  max-width:1100px; margin:auto;
+  padding:16px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  color:var(--muted);
+  font-size:12px;
+}
 
-    /* Map */
-    .mapWrap{
-      margin-top:12px;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-    }
-    .mapWrap iframe{
-      width:100%;
-      height:320px;
-      border:0;
-      display:block;
-    }
-    .mapHint{
-      padding:12px;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.8;
-      border-top:1px solid var(--line);
-    }
-
-    /* Footer */
-    footer{
-      margin-top:34px;
-      border-top:1px solid var(--line);
-      background:rgba(7,12,23,.72);
-    }
-    footer .wrap{
-      max-width:1100px; margin:auto;
-      padding:16px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    /* WhatsApp Float */
-    .whatsapp-float{
-      position:fixed;
-      bottom:18px;
-      right:18px;
-      width:56px; height:56px;
-      display:flex; align-items:center; justify-content:center;
-      background:#25D366;
-      color:#fff;
-      border-radius:50%;
-      text-decoration:none;
-      font-size:24px;
-      box-shadow:0 12px 30px rgba(0,0,0,.35);
-      z-index:999;
-    }
-    .whatsapp-float:active{transform:scale(.98)}
-  </style>
+/* WhatsApp Float */
+.whatsapp-float{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  width:56px; height:56px;
+  display:flex; align-items:center; justify-content:center;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  z-index:999;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <div class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>هيلز هوم للمقاولات العامة</strong>
-        <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
-      </div>
+<!-- Header -->
+<div class="header">
+  <div class="wrap">
+    <div class="brand">
+      <strong>هيلز هوم للمقاولات العامة</strong>
+      <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+    </div>
 
-      <!-- نفس الأسماء ونفس الترتيب -->
-      <div class="nav">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="projects.html">خدماتنا</a>
-        <a href="gallery.html">المشاريع</a>
-        <a href="management.html">الإدارة</a>
-        <a class="active" href="contact.html">تواصل معنا</a>
-      </div>
+    <div class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="projects.html">خدماتنا</a>
+      <a href="gallery.html">المشاريع</a>
+      <a href="management.html">الإدارة</a>
+      <a class="active" href="contact.html">تواصل معنا</a>
     </div>
   </div>
+</div>
+
+<div class="container">
 
   <!-- Hero -->
   <section class="hero">
-    <div class="heroCard">
+    <div class="card">
       <div class="kicker">📞 تواصل مباشر — استجابة سريعة</div>
       <h1>تواصل معنا</h1>
       <p>
@@ -238,105 +212,131 @@
       </p>
 
       <div class="cta">
-        <a class="btn" href="tel:0540671117">اتصال مباشر</a>
+        <a class="btn" href="tel:0540671117">اتصال (الرئيس التنفيذي)</a>
         <a class="btn whatsapp" target="_blank" href="https://wa.me/966540671117">واتساب</a>
-        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">فتح الموقع على الخرائط</a>
+        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7">فتح الموقع على الخرائط</a>
       </div>
 
-      <p class="note">
-        رقم التواصل الرسمي للشركة: <b>0540671117</b>
+      <p class="small">
+        ✅ رقم التواصل الرسمي: <b style="color:#fff">0540671117</b>
       </p>
     </div>
 
-    <div class="badge">
-      <b>جاهزين للمعاينة</b>
-      <p>نرتّب زيارة ومعاينة للموقع وتحديد نطاق العمل والمدة المتوقعة للتنفيذ.</p>
+    <div class="card">
+      <h2>الإدارة العليا</h2>
+      <p>
+        نؤمن أن نجاح المشروع يبدأ من قيادة واضحة وإدارة دقيقة للتفاصيل،
+        لذلك نهتم بخدمة العملاء والمتابعة الميدانية لضمان جودة التسليم.
+      </p>
+
+      <div class="cta">
+        <a class="btn secondary" href="tel:0540376687">📞 رئيس مجلس الإدارة: 0540376687</a>
+        <a class="btn secondary" href="tel:0540671117">📞 الرئيس التنفيذي: 0540671117</a>
+      </div>
+
+      <p class="small">
+        رئيس مجلس الإدارة: <b style="color:#fff">م/ إسلام الناعم</b><br>
+        الرئيس التنفيذي: <b style="color:#fff">م/ علاء همام</b>
+      </p>
     </div>
   </section>
 
-  <!-- Contact Cards -->
-  <section class="section">
+  <!-- Grid -->
+  <section class="grid">
 
-    <!-- Info -->
+    <!-- Contact Info + Map -->
     <div class="card">
       <h2>معلومات التواصل</h2>
-      <p>الهاتف: <b>0540671117</b></p>
+      <p>الهاتف: <b style="color:#fff">0540671117</b></p>
+      <p>واتساب: <b style="color:#fff">0540671117</b></p>
+      <p>الموقع: <b style="color:#fff">القصيم — المملكة العربية السعودية</b></p>
+
       <div class="cta">
         <a class="btn" href="tel:0540671117">اتصال</a>
         <a class="btn whatsapp" target="_blank" href="https://wa.me/966540671117">واتساب</a>
-        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">الاتجاهات</a>
+        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7">الاتجاهات</a>
       </div>
 
       <div class="mapWrap">
-        <!--
-          ✅ لإظهار الخريطة داخل الموقع:
-          1) افتح موقعك في Google Maps
-          2) مشاركة -> تضمين خريطة (Embed a map)
-          3) انسخ رابط iframe وضعه بدل src أدناه
-        -->
         <iframe
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          src="about:blank"
-          title="خريطة الموقع">
+          src="https://www.google.com/maps?q=هيلز+هوم+للمقاولات+العامة&output=embed"
+          title="خريطة موقع شركة هيلز هوم">
         </iframe>
-
-        <div class="mapHint">
-          🔧 لتفعيل الخريطة داخل الصفحة: انسخ رابط “تضمين خريطة” من Google Maps وضعه بدل <b>about:blank</b>.
-          (زر “فتح الموقع على الخرائط” يعمل الآن حتى قبل تضمين الخريطة).
-        </div>
       </div>
+
+      <p class="small">إذا تحب خريطة دقيقة جدًا، نضع رابط Embed الرسمي من Google Maps بدل البحث بالاسم.</p>
     </div>
 
     <!-- Form -->
     <div class="card">
-      <h2>أرسل رسالة</h2>
-      <p>اكتب البيانات واضغط “إرسال عبر واتساب” وسيتم تجهيز رسالة جاهزة تلقائيًا.</p>
+      <h2>طلب عرض سعر سريع</h2>
+      <p>املأ البيانات واضغط “إرسال عبر واتساب” وسيتم تجهيز رسالة جاهزة تلقائيًا.</p>
 
       <div class="formRow">
         <input id="name" type="text" placeholder="الاسم" />
         <input id="phone" type="tel" placeholder="رقم الجوال" />
       </div>
-      <textarea id="msg" placeholder="تفاصيل الطلب / المشروع (الموقع، المساحة، نوع العمل، المدة المطلوبة...)"></textarea>
+
+      <div class="formRow">
+        <select id="service">
+          <option>أعمال الأسفلت والطرق</option>
+          <option>البنية التحتية</option>
+          <option>أعمال الإنشاءات</option>
+          <option>الأعمال الترابية (صبيز/بيس كورس)</option>
+          <option>دهانات وتخطيط الطرق</option>
+          <option>ساحات ومواقف</option>
+        </select>
+        <input id="city" type="text" placeholder="المدينة / الحي" />
+      </div>
+
+      <textarea id="details" placeholder="تفاصيل المشروع (المساحة، نوع العمل، موعد التنفيذ المطلوب...)"></textarea>
 
       <button class="btn whatsapp" style="width:100%; margin-top:12px;" type="button" onclick="sendWhatsApp()">
         إرسال عبر واتساب
       </button>
 
-      <p class="note">
-        ملاحظة: هذا النموذج لا يرسل بريد — فقط يجهز رسالة واتساب احترافية.
+      <p class="small">
+        ملاحظة: النموذج لا يرسل بريد — فقط يجهز رسالة واتساب احترافية.
       </p>
     </div>
 
   </section>
 
-  <footer>
-    <div class="wrap">
-      <div>© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة</div>
-      <div>هاتف: 0540671117</div>
-    </div>
-  </footer>
+</div>
 
-  <!-- WhatsApp Float -->
-  <a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
+<footer>
+  <div class="wrap">
+    <div>© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة</div>
+    <div>هاتف: 0540671117</div>
+  </div>
+</footer>
 
-  <script>
-    function sendWhatsApp(){
-      var name = document.getElementById('name').value.trim();
-      var phone = document.getElementById('phone').value.trim();
-      var msg = document.getElementById('msg').value.trim();
+<!-- WhatsApp Float -->
+<a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
 
-      var text =
-        "السلام عليكم،\n" +
-        "أنا: " + (name || "—") + "\n" +
-        "رقمي: " + (phone || "—") + "\n\n" +
-        "تفاصيل الطلب:\n" + (msg || "—") + "\n\n" +
-        "— شركة هيلز هوم للمقاولات العامة";
+<script>
+function sendWhatsApp(){
+  var name = document.getElementById('name').value.trim() || "—";
+  var phone = document.getElementById('phone').value.trim() || "—";
+  var service = document.getElementById('service').value.trim() || "—";
+  var city = document.getElementById('city').value.trim() || "—";
+  var details = document.getElementById('details').value.trim() || "—";
 
-      var url = "https://wa.me/966540671117?text=" + encodeURIComponent(text);
-      window.open(url, "_blank");
-    }
-  </script>
+  var text =
+    "السلام عليكم،\n" +
+    "طلب عرض سعر من موقع شركة هيلز هوم للمقاولات العامة\n\n" +
+    "الاسم: " + name + "\n" +
+    "الجوال: " + phone + "\n" +
+    "الخدمة: " + service + "\n" +
+    "الموقع: " + city + "\n\n" +
+    "تفاصيل المشروع:\n" + details + "\n\n" +
+    "— شكراً لكم";
+
+  window.open("https://wa.me/966540671117?text=" + encodeURIComponent(text), "_blank");
+}
+</script>
 
 </body>
 </html>
