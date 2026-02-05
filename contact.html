@@ -1,215 +1,342 @@
-  font-size:13px;
-  border:1px solid var(--brand);
-  color:#fff;
-}
-.btn.whatsapp{border-color:#25D366}
-.btn.map{border-color:#4da3ff}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا | شركة هيلز هوم للمقاولات العامة</title>
 
-/* Map */
-.mapBox{
-  margin-top:14px;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.10);
-}
-.mapBox iframe{
-  width:100%;
-  height:320px;
-  border:0;
-}
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a33;
+      --panel2:#101f3d;
+      --text:#ffffff;
+      --muted:#c8d1e6;
+      --brand:#f0a500;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 12px 35px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Tahoma, Arial;
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
+        linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
+      color:var(--text);
+    }
+    a{color:inherit}
 
-/* Form */
-.form{
-  background:#101f3d;
-  padding:22px;
-  border-radius:16px;
-  border:1px solid var(--line);
-}
-.form h3{margin-top:0;color:#ffd27a}
-input, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border-radius:10px;
-  border:1px solid var(--line);
-  background:#0b1220;
-  color:#fff;
-}
-textarea{min-height:120px}
-button{
-  margin-top:12px;
-  padding:12px;
-  width:100%;
-  border:0;
-  border-radius:10px;
-  background:var(--brand);
-  color:#000;
-  font-weight:bold;
-  cursor:pointer;
-}
+    /* Header */
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(7,12,23,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .header .wrap{
+      max-width:1100px; margin:auto;
+      padding:14px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{display:flex; flex-direction:column; gap:4px;}
+    .brand strong{font-size:16px; letter-spacing:.2px}
+    .brand span{font-size:12px; color:var(--muted)}
+    .nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+    .nav a{
+      text-decoration:none;
+      padding:9px 12px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      font-size:13px;
+      background:rgba(255,255,255,.04);
+    }
+    .nav a:hover{border-color:rgba(240,165,0,.55)}
+    .nav a.active{
+      border-color:rgba(240,165,0,.75);
+      box-shadow:0 0 0 3px rgba(240,165,0,.10);
+    }
 
-/* WhatsApp Float */
-.whatsapp-float{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  width:56px;
-  height:56px;
-  background:#25D366;
-  color:#fff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  text-decoration:none;
-}
+    /* Hero */
+    .hero{
+      max-width:1100px; margin:auto;
+      padding:56px 16px 18px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+    }
+    @media(max-width:900px){ .hero{grid-template-columns:1fr} }
+    .heroCard{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(240,165,0,.35);
+      background:rgba(240,165,0,.08);
+      color:#ffd27a;
+      font-size:12px;
+      margin-bottom:14px;
+    }
+    .hero h1{margin:0 0 10px; font-size:32px}
+    .hero p{margin:0; color:var(--muted); line-height:1.9}
 
-/* Footer */
-footer{
-  margin-top:40px;
-  background:#070c17;
-  text-align:center;
-  padding:16px;
-  color:#aaa;
-}
-</style>
+    .badge{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .badge b{color:var(--brand)}
+    .badge p{margin:8px 0 0; color:var(--muted); line-height:1.8; font-size:13px}
+
+    /* Section */
+    .section{
+      max-width:1100px; margin:auto;
+      padding:18px 16px 0;
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+    @media(max-width:900px){ .section{grid-template-columns:1fr} }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 10px; font-size:18px; color:#ffe2a5}
+    .card p{margin:0; color:var(--muted); line-height:1.9; font-size:13px}
+
+    /* Buttons */
+    .cta{margin:14px 0 0; display:flex; gap:10px; flex-wrap:wrap;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(240,165,0,.55);
+      background:rgba(240,165,0,.12);
+      text-decoration:none;
+      font-size:13px;
+      cursor:pointer;
+    }
+    .btn:hover{background:rgba(240,165,0,.18)}
+    .btn.secondary{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.04);
+    }
+    .btn.whatsapp{
+      border-color:rgba(37,211,102,.65);
+      background:rgba(37,211,102,.10);
+    }
+
+    /* Form */
+    .formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+    @media(max-width:700px){ .formRow{grid-template-columns:1fr} }
+    input, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#fff;
+      font-family:Tahoma, Arial;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .note{margin-top:10px; color:var(--muted); font-size:12px; line-height:1.8}
+
+    /* Map */
+    .mapWrap{
+      margin-top:12px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .mapWrap iframe{
+      width:100%;
+      height:320px;
+      border:0;
+      display:block;
+    }
+    .mapHint{
+      padding:12px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.8;
+      border-top:1px solid var(--line);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:34px;
+      border-top:1px solid var(--line);
+      background:rgba(7,12,23,.72);
+    }
+    footer .wrap{
+      max-width:1100px; margin:auto;
+      padding:16px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float{
+      position:fixed;
+      bottom:18px;
+      right:18px;
+      width:56px; height:56px;
+      display:flex; align-items:center; justify-content:center;
+      background:#25D366;
+      color:#fff;
+      border-radius:50%;
+      text-decoration:none;
+      font-size:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+      z-index:999;
+    }
+    .whatsapp-float:active{transform:scale(.98)}
+  </style>
 </head>
 
 <body>
 
-<!-- Header -->
-<div class="header">
-  <div class="wrap">
-    <strong>هيلز هوم للمقاولات العامة</strong>
-    <div class="nav">
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html">من نحن</a>
-      <a href="projects.html">خدماتنا</a>
-      <a href="gallery.html">المشاريع</a>
-      <a href="management.html">الإدارة</a>
-      <a href="contact.html">تواصل معنا</a>
-    </div>
-  </div>
-</div>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="heroBox">
-    <h1>تواصل معنا</h1>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="section">
-  <div class="grid">
-
-    <!-- Info -->
-    <div class="info">
-      <h3>معلومات التواصل</h3>
-
-      <p>
-        يسعدنا استقبال استفساراتكم وطلبات
-        تنفيذ مشاريع الطرق والبنية التحتية
-        والإنشاءات.
-      </p>
-
-      <p><strong>رقم الهاتف:</strong><br>0540671117</p>
-
-      <a class="btn" href="tel:0540671117">اتصال مباشر</a>
-      <a class="btn whatsapp" target="_blank"
-         href="https://wa.me/966540671117">
-         واتساب
-      </a>
-
-      <a class="btn map" target="_blank"
-         href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">
-         فتح الموقع
-      </a>
-
-      <a class="btn map" target="_blank"
-         href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">
-         الاتجاهات
-      </a>
-
-      <!-- Map -->
-      <div class="mapBox">
-        <iframe
-        src="https://www.google.com/maps?q=%D9%87%D9%8A%D9%84%D8%B2%20%D9%87%D9%88%D9%85%20%D8%A7%D9%84%D9%82%D8%B5%D9%8A%D9%85&hl=ar&z=15&output=embed"
-        loading="lazy">
-        </iframe>
+  <!-- Header -->
+  <div class="header">
+    <div class="wrap">
+      <div class="brand">
+        <strong>هيلز هوم للمقاولات العامة</strong>
+        <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
       </div>
 
+      <!-- نفس الأسماء ونفس الترتيب -->
+      <div class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="projects.html">خدماتنا</a>
+        <a href="gallery.html">المشاريع</a>
+        <a href="management.html">الإدارة</a>
+        <a class="active" href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="heroCard">
+      <div class="kicker">📞 تواصل مباشر — استجابة سريعة</div>
+      <h1>تواصل معنا</h1>
+      <p>
+        يسعدنا استقبال استفساراتكم وطلبات تنفيذ مشاريع <b>الطرق والأسفلت</b> و<b>البنية التحتية</b> و<b>الإنشاءات</b>.
+        شاركنا تفاصيل مشروعك وسنعود لك بأفضل حل مناسب من حيث الجودة والتنفيذ.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="tel:0540671117">اتصال مباشر</a>
+        <a class="btn whatsapp" target="_blank" href="https://wa.me/966540671117">واتساب</a>
+        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">فتح الموقع على الخرائط</a>
+      </div>
+
+      <p class="note">
+        رقم التواصل الرسمي للشركة: <b>0540671117</b>
+      </p>
+    </div>
+
+    <div class="badge">
+      <b>جاهزين للمعاينة</b>
+      <p>نرتّب زيارة ومعاينة للموقع وتحديد نطاق العمل والمدة المتوقعة للتنفيذ.</p>
+    </div>
+  </section>
+
+  <!-- Contact Cards -->
+  <section class="section">
+
+    <!-- Info -->
+    <div class="card">
+      <h2>معلومات التواصل</h2>
+      <p>الهاتف: <b>0540671117</b></p>
+      <div class="cta">
+        <a class="btn" href="tel:0540671117">اتصال</a>
+        <a class="btn whatsapp" target="_blank" href="https://wa.me/966540671117">واتساب</a>
+        <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">الاتجاهات</a>
+      </div>
+
+      <div class="mapWrap">
+        <!--
+          ✅ لإظهار الخريطة داخل الموقع:
+          1) افتح موقعك في Google Maps
+          2) مشاركة -> تضمين خريطة (Embed a map)
+          3) انسخ رابط iframe وضعه بدل src أدناه
+        -->
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="about:blank"
+          title="خريطة الموقع">
+        </iframe>
+
+        <div class="mapHint">
+          🔧 لتفعيل الخريطة داخل الصفحة: انسخ رابط “تضمين خريطة” من Google Maps وضعه بدل <b>about:blank</b>.
+          (زر “فتح الموقع على الخرائط” يعمل الآن حتى قبل تضمين الخريطة).
+        </div>
+      </div>
     </div>
 
     <!-- Form -->
-    <div class="form">
-      <h3>أرسل رسالة</h3>
+    <div class="card">
+      <h2>أرسل رسالة</h2>
+      <p>اكتب البيانات واضغط “إرسال عبر واتساب” وسيتم تجهيز رسالة جاهزة تلقائيًا.</p>
 
-      <form id="whatsappForm">
+      <div class="formRow">
+        <input id="name" type="text" placeholder="الاسم" />
+        <input id="phone" type="tel" placeholder="رقم الجوال" />
+      </div>
+      <textarea id="msg" placeholder="تفاصيل الطلب / المشروع (الموقع، المساحة، نوع العمل، المدة المطلوبة...)"></textarea>
 
-        <input id="name" type="text"
-               placeholder="الاسم" required>
+      <button class="btn whatsapp" style="width:100%; margin-top:12px;" type="button" onclick="sendWhatsApp()">
+        إرسال عبر واتساب
+      </button>
 
-        <input id="phone" type="tel"
-               placeholder="رقم الجوال" required>
-
-        <textarea id="message"
-                  placeholder="تفاصيل الطلب / المشروع"
-                  required></textarea>
-
-        <button type="submit">
-          إرسال عبر واتساب
-        </button>
-
-      </form>
+      <p class="note">
+        ملاحظة: هذا النموذج لا يرسل بريد — فقط يجهز رسالة واتساب احترافية.
+      </p>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<footer>
-© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
-</footer>
+  <footer>
+    <div class="wrap">
+      <div>© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة</div>
+      <div>هاتف: 0540671117</div>
+    </div>
+  </footer>
 
-<!-- WhatsApp Float -->
-<a class="whatsapp-float"
-   target="_blank"
-   href="https://wa.me/966540671117">
-💬
-</a>
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
 
-<!-- WhatsApp Form Script -->
-<script>
-document.getElementById("whatsappForm")
-.addEventListener("submit", function(e){
+  <script>
+    function sendWhatsApp(){
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var msg = document.getElementById('msg').value.trim();
 
-e.preventDefault();
+      var text =
+        "السلام عليكم،\n" +
+        "أنا: " + (name || "—") + "\n" +
+        "رقمي: " + (phone || "—") + "\n\n" +
+        "تفاصيل الطلب:\n" + (msg || "—") + "\n\n" +
+        "— شركة هيلز هوم للمقاولات العامة";
 
-var name =
-document.getElementById("name").value;
-
-var phone =
-document.getElementById("phone").value;
-
-var message =
-document.getElementById("message").value;
-
-var text =
-"السلام عليكم\n\n" +
-"الاسم: " + name + "\n" +
-"رقم الجوال: " + phone + "\n" +
-"تفاصيل المشروع: " + message + "\n\n" +
-"مرسل من موقع شركة هيلز هوم";
-
-var url =
-"https://wa.me/966540671117?text=" +
-encodeURIComponent(text);
-
-window.open(url, "_blank");
-
-});
-</script>
+      var url = "https://wa.me/966540671117?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
