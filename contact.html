@@ -1,82 +1,306 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head<title>تواصل معنا | هيلز هوم للمقاولات العامة</title>
-<section class="map-section">
-  <h2>موقعنا على الخريطة</h2>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تواصل معنا | شركة هيلز هوم للمقاولات العامة</title>
 
-  <!-- ✏️ لا تغيّر الإطار -->
-  <iframe
-    src="https://www.google.com/maps?q=QZz8EFNmojieZELj8&output=embed"
-    width="100%"
-    height="300"
-    style="border:0; border-radius:12px;"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
-</section><meta name="description" content="تواصل مع شركة هيلز هوم للمقاولات العامة لتنفيذ مشاريع الأسفلت والطرق والبنية التحتية في جميع مناطق المملكة.">
-<meta name="keywords" content="تواصل مقاولات, رقم مقاول أسفلت, مقاول طرق السعودية">>
-  <meta charset="UTF-8">
-  <title>تواصل معنا | هيلز هوم للمقاولات العامة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#0f1a33;
+  --text:#ffffff;
+  --muted:#c8d1e6;
+  --brand:#f0a500;
+  --line:rgba(255,255,255,.10);
+}
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:linear-gradient(180deg,#070c17,#0b1220);
+  color:#fff;
+}
+
+/* Header */
+.header{
+  background:#070c17;
+  border-bottom:1px solid var(--line);
+}
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:14px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.nav a{
+  text-decoration:none;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin-left:6px;
+  font-size:13px;
+  color:#fff;
+}
+
+/* Hero */
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 16px 20px;
+}
+.heroBox{
+  background:var(--panel);
+  padding:26px;
+  border-radius:18px;
+}
+.hero h1{color:var(--brand);margin:0}
+
+/* Layout */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:26px 16px 0;
+}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+}
+
+/* Info */
+.info{
+  background:#0f1a33;
+  padding:22px;
+  border-radius:16px;
+  border:1px solid var(--line);
+}
+.info h3{margin-top:0;color:#ffd27a}
+.info p{color:var(--muted);line-height:2}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  margin:6px 6px 0 0;
+  font-size:13px;
+  border:1px solid var(--brand);
+  color:#fff;
+}
+.btn.whatsapp{border-color:#25D366}
+.btn.map{border-color:#4da3ff}
+
+/* Map */
+.mapBox{
+  margin-top:14px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+}
+.mapBox iframe{
+  width:100%;
+  height:320px;
+  border:0;
+}
+
+/* Form */
+.form{
+  background:#101f3d;
+  padding:22px;
+  border-radius:16px;
+  border:1px solid var(--line);
+}
+.form h3{margin-top:0;color:#ffd27a}
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#0b1220;
+  color:#fff;
+}
+textarea{min-height:120px}
+button{
+  margin-top:12px;
+  padding:12px;
+  width:100%;
+  border:0;
+  border-radius:10px;
+  background:var(--brand);
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* WhatsApp Float */
+.whatsapp-float{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  width:56px;
+  height:56px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  text-decoration:none;
+}
+
+/* Footer */
+footer{
+  margin-top:40px;
+  background:#070c17;
+  text-align:center;
+  padding:16px;
+  color:#aaa;
+}
+</style>
 </head>
 
-<body><!-- زر واتساب -->
-<a href="https://wa.me/966540671117" class="whatsapp-float" target="_blank">
-  واتساب
-</a>
+<body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">هيلز هوم للمقاولات العامة</a>
-    <nav class="nav">
+<!-- Header -->
+<div class="header">
+  <div class="wrap">
+    <strong>هيلز هوم للمقاولات العامة</strong>
+    <div class="nav">
       <a href="index.html">الرئيسية</a>
       <a href="about.html">من نحن</a>
       <a href="projects.html">خدماتنا</a>
-    <a href="gallery.html">المشاريع</a>
+      <a href="gallery.html">المشاريع</a>
       <a href="management.html">الإدارة</a>
       <a href="contact.html">تواصل معنا</a>
-    </nav>
+    </div>
   </div>
-</header>
+</div>
 
-<section class="hero small">
-  <div class="container">
+<!-- Hero -->
+<section class="hero">
+  <div class="heroBox">
     <h1>تواصل معنا</h1>
-    <p>نخدم جميع مناطق المملكة العربية السعودية</p>
   </div>
 </section>
 
+<!-- Contact -->
 <section class="section">
-  <div class="container">
-    <div class="contact-box">
-      <h2>بيانات التواصل</h2>
+  <div class="grid">
 
-      <p><strong>📞 هاتف / واتساب:</strong></p>
-      <p class="contact-phone"><a href="tel:0540671117">0540671117</a></p>
+    <!-- Info -->
+    <div class="info">
+      <h3>معلومات التواصل</h3>
 
-      <p><strong>📍 الموقع:</strong></p>
-      <p>القصيم – نخدم جميع أنحاء المملكة</p>
-
-      <p><strong>👤 الرئيس التنفيذي:</strong></p>
-      <p>م/ علاء همام</p>
-
-      <p style="margin-top:14px;">
-        <a class="btn-primary" href="https://wa.me/966540671117" target="_blank">مراسلة واتساب مباشرة</a>
+      <p>
+        يسعدنا استقبال استفساراتكم وطلبات
+        تنفيذ مشاريع الطرق والبنية التحتية
+        والإنشاءات.
       </p>
+
+      <p><strong>رقم الهاتف:</strong><br>0540671117</p>
+
+      <a class="btn" href="tel:0540671117">اتصال مباشر</a>
+      <a class="btn whatsapp" target="_blank"
+         href="https://wa.me/966540671117">
+         واتساب
+      </a>
+
+      <a class="btn map" target="_blank"
+         href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">
+         فتح الموقع
+      </a>
+
+      <a class="btn map" target="_blank"
+         href="https://maps.app.goo.gl/VSWqSSdDyuxcJdEj9">
+         الاتجاهات
+      </a>
+
+      <!-- Map -->
+      <div class="mapBox">
+        <iframe
+        src="https://www.google.com/maps?q=%D9%87%D9%8A%D9%84%D8%B2%20%D9%87%D9%88%D9%85%20%D8%A7%D9%84%D9%82%D8%B5%D9%8A%D9%85&hl=ar&z=15&output=embed"
+        loading="lazy">
+        </iframe>
+      </div>
+
     </div>
+
+    <!-- Form -->
+    <div class="form">
+      <h3>أرسل رسالة</h3>
+
+      <form id="whatsappForm">
+
+        <input id="name" type="text"
+               placeholder="الاسم" required>
+
+        <input id="phone" type="tel"
+               placeholder="رقم الجوال" required>
+
+        <textarea id="message"
+                  placeholder="تفاصيل الطلب / المشروع"
+                  required></textarea>
+
+        <button type="submit">
+          إرسال عبر واتساب
+        </button>
+
+      </form>
+    </div>
+
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>هيلز هوم للمقاولات العامة</strong><br>
-      إنشاءات • بنية تحتية • أسفلت ودهانات طرق
-    </div>
-    <div>© جميع الحقوق محفوظة</div>
-  </div>
+<footer>
+© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
 </footer>
+
+<!-- WhatsApp Float -->
+<a class="whatsapp-float"
+   target="_blank"
+   href="https://wa.me/966540671117">
+💬
+</a>
+
+<!-- WhatsApp Form Script -->
+<script>
+document.getElementById("whatsappForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+var name =
+document.getElementById("name").value;
+
+var phone =
+document.getElementById("phone").value;
+
+var message =
+document.getElementById("message").value;
+
+var text =
+"السلام عليكم\n\n" +
+"الاسم: " + name + "\n" +
+"رقم الجوال: " + phone + "\n" +
+"تفاصيل المشروع: " + message + "\n\n" +
+"مرسل من موقع شركة هيلز هوم";
+
+var url =
+"https://wa.me/966540671117?text=" +
+encodeURIComponent(text);
+
+window.open(url, "_blank");
+
+});
+</script>
 
 </body>
 </html>
