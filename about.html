@@ -1,134 +1,313 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>من نحن | هيلز هوم للمقاولات العامة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>من نحن | شركة هيلز هوم للمقاولات العامة</title>
+
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#0f1a33;
+  --text:#ffffff;
+  --muted:#c8d1e6;
+  --brand:#f0a500;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 12px 35px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
+    linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
+  color:var(--text);
+}
+a{color:inherit}
+
+/* Header */
+.header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background:rgba(7,12,23,.72);
+  border-bottom:1px solid var(--line);
+}
+.header .wrap{
+  max-width:1100px; margin:auto;
+  padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{display:flex; flex-direction:column; gap:4px;}
+.brand strong{font-size:16px; letter-spacing:.2px}
+.brand span{font-size:12px; color:var(--muted)}
+.nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+.nav a{
+  text-decoration:none;
+  padding:9px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font-size:13px;
+  background:rgba(255,255,255,.04);
+}
+.nav a:hover{border-color:rgba(240,165,0,.55)}
+.nav a.active{
+  border-color:rgba(240,165,0,.75);
+  box-shadow:0 0 0 3px rgba(240,165,0,.10);
+}
+
+/* Hero */
+.hero{
+  max-width:1100px; margin:auto;
+  padding:56px 16px 18px;
+  display:grid; grid-template-columns: 1.35fr .65fr; gap:18px;
+}
+@media(max-width:900px){ .hero{grid-template-columns:1fr} }
+.heroCard{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+.kicker{
+  display:inline-flex; gap:8px; align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(240,165,0,.35);
+  background:rgba(240,165,0,.08);
+  color:#ffd27a;
+  font-size:12px;
+  margin-bottom:14px;
+}
+.hero h1{margin:0 0 10px; font-size:32px}
+.hero p{margin:0; color:var(--muted); line-height:1.95}
+.cta{margin:16px 0 0; display:flex; gap:10px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(240,165,0,.55);
+  background:rgba(240,165,0,.12);
+  text-decoration:none;
+  font-size:13px;
+}
+.btn:hover{background:rgba(240,165,0,.18)}
+.btn.secondary{
+  border-color:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+}
+.heroSide{display:grid; gap:12px;}
+.badge{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+.badge b{color:var(--brand)}
+.badge p{margin:8px 0 0; color:var(--muted); line-height:1.85; font-size:13px}
+
+/* Sections */
+.section{
+  max-width:1100px; margin:auto;
+  padding:34px 16px 0;
+}
+.sectionTitle{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:12px;
+  margin-bottom:14px;
+}
+.sectionTitle h2{margin:0; font-size:20px}
+.sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+
+.grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;
+}
+@media(max-width:900px){ .grid{grid-template-columns:1fr} }
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+.card h3{margin:0 0 8px; color:#ffe2a5; font-size:16px}
+.card p{margin:0; color:var(--muted); line-height:1.9; font-size:13px}
+.pill{
+  display:inline-block;
+  margin-top:10px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);
+  color:#dfe7ff;
+  font-size:12px;
+}
+
+/* Values list */
+.list{
+  display:grid;
+  gap:10px;
+}
+.item{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px 16px;
+}
+.item b{color:#ffe2a5}
+.item p{margin:6px 0 0; color:var(--muted); line-height:1.9; font-size:13px}
+
+/* Footer */
+footer{
+  margin-top:34px;
+  border-top:1px solid var(--line);
+  background:rgba(7,12,23,.72);
+}
+footer .wrap{
+  max-width:1100px; margin:auto;
+  padding:16px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* WhatsApp */
+.whatsapp-float{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  width:56px; height:56px;
+  display:flex; align-items:center; justify-content:center;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  z-index:999;
+}
+.whatsapp-float:active{transform:scale(.98)}
+</style>
 </head>
 
 <body>
 
-<!-- شريط التنقل -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">
-      هيلز هوم للمقاولات العامة
-    </a>
-
-    <nav class="nav">
+<!-- Header -->
+<div class="header">
+  <div class="wrap">
+    <div class="brand">
+      <strong>هيلز هوم للمقاولات العامة</strong>
+      <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+    </div>
+    <div class="nav">
       <a href="index.html">الرئيسية</a>
-      <a href="about.html">من نحن</a>
+      <a class="active" href="about.html">من نحن</a>
       <a href="projects.html">خدماتنا</a>
-     <a href="gallery.html">المشاريع</a>
+      <a href="gallery.html">المشاريع</a>
       <a href="management.html">الإدارة</a>
       <a href="contact.html">تواصل معنا</a>
-    </nav>
+    </div>
   </div>
-</header>
+</div>
 
-<!-- عنوان الصفحة -->
-<section class="hero small">
-  <div class="container">
+<!-- Hero -->
+<section class="hero">
+  <div class="heroCard">
+    <div class="kicker">✅ تعريف رسمي — بدون أرقام وبدون صور</div>
     <h1>من نحن</h1>
     <p>
-      خبرة ميدانية ورؤية هندسية تقودنا نحو تنفيذ
-      مشاريع المقاولات والبنية التحتية باحترافية عالية.
-    </p>
-  </div>
-</section>
-
-<!-- نبذة الشركة -->
-<section class="section">
-  <div class="container">
-
-    <h2>نبذة عن الشركة</h2>
-
-    <p>
-      شركة <strong>هيلز هوم للمقاولات العامة</strong>
-      شركة سعودية متخصصة في تنفيذ مشاريع
-      الإنشاءات والبنية التحتية وأعمال الطرق والأسفلت،
-      حيث نعمل وفق منهجية احترافية تبدأ من دراسة
-      المشروع وحتى التسليم النهائي.
+      شركة <b>هيلز هوم للمقاولات العامة</b> تقدم حلولًا متكاملة في
+      <b>الإنشاءات</b> و<b>البنية التحتية</b> و<b>الطرق والأسفلت</b>.
+      نركز على جودة التنفيذ، وضبط التفاصيل، وتنظيم موقع العمل لتحقيق نتائج قوية تدوم.
     </p>
 
-    <p>
-      نمتلك خبرة عملية في تنفيذ مشاريع السفلتة،
-      المواقف، الساحات، وأعمال التربة من
-      صبيز وبيس كورس، إضافة إلى تخطيط
-      ودهانات الطرق وفق أعلى المواصفات.
-    </p>
-
-  </div>
-</section>
-
-<!-- الرؤية والرسالة -->
-<section class="section light">
-  <div class="container">
-
-    <h2>رؤيتنا</h2>
-    <p>
-      أن نكون من الشركات الرائدة في قطاع
-      المقاولات العامة بالمملكة العربية السعودية،
-      من خلال تقديم مشاريع ذات جودة عالية
-      ومعايير تنفيذ تضاهي كبرى الشركات.
-    </p>
-
-    <h2>رسالتنا</h2>
-    <p>
-    </p>
-
-  </div>
-</section>
-
-<!-- الإدارة -->
-<section class="section">
-  <div class="container">
-
-    <h2>القيادة الإدارية</h2>
-
-    <p>
-      يقود شركة هيلز هوم للمقاولات العامة
-      فريق إداري يتمتع بالكفاءة والخبرة،
-      يعمل على تطوير الأداء ورفع جودة
-      تنفيذ المشاريع وبناء علاقات مستدامة
-      مع العملاء.
-    </p>
-
-    <h3>رئيس مجلس الإدارة</h3>
-    <p>
-      م / إسلام الناعم<br>
-      📞 0540376687
-    </p>
-
-    <h3>الرئيس التنفيذي</h3>
-
-<p>
-  المهندس / <strong>علاء همام</strong><br>
-  يشرف على الإدارة التنفيذية للشركة،
-  ويقود فرق العمل الميدانية لضمان تنفيذ
-  المشاريع وفق أعلى معايير الجودة.
-</p>
-
-<p>
-  📞 رقم الجوال: 0540671117
-</p>
-
-<!-- الفوتر -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-
-    <div>
-      <strong>هيلز هوم للمقاولات العامة</strong><br>
-      إنشاءات • بنية تحتية • أسفلت
+    <div class="cta">
+      <a class="btn" href="projects.html">استعرض الخدمات</a>
+      <a class="btn secondary" href="contact.html">تواصل معنا الآن</a>
     </div>
+  </div>
 
-    <div>
-      © جميع الحقوق محفوظة
+  <div class="heroSide">
+    <div class="badge">
+      <b>رؤيتنا</b>
+      <p>أن نكون خيارًا موثوقًا لتنفيذ مشاريع المقاولات بجودة عالية وتنظيم احترافي.</p>
     </div>
+    <div class="badge">
+      <b>رسالتنا</b>
+      <p>تقديم تنفيذ دقيق وآمن وفق المواصفات، مع وضوح في نطاق العمل والتسليم.</p>
+    </div>
+    <div class="badge">
+      <b>نهجنا</b>
+      <p>تخطيط مسبق، إشراف هندسي، ضبط جودة، وتسليم منظم يحقق رضا العميل.</p>
+    </div>
+  </div>
+</section>
 
+<!-- What we do -->
+<section class="section">
+  <div class="sectionTitle">
+    <h2>ماذا نقدم؟</h2>
+    <p>مجالات عمل واضحة تُظهر قوة التخصص.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>الطرق والأسفلت</h3>
+      <p>تنفيذ أعمال السفلتة من التجهيز والأعمال الترابية حتى الطبقة النهائية، مع ضبط المناسيب والتسوية.</p>
+      <span class="pill">طبقات • تسوية • رصف</span>
+    </div>
+    <div class="card">
+      <h3>البنية التحتية</h3>
+      <p>تنفيذ الشبكات والأعمال المساندة للمخططات مثل التصريف وغرف التفتيش والتجهيزات الأساسية.</p>
+      <span class="pill">شبكات • تصريف • غرف</span>
+    </div>
+    <div class="card">
+      <h3>الإنشاءات</h3>
+      <p>تنفيذ المباني والمرافق والساحات بإدارة موقع منظمة وإشراف هندسي على مراحل التنفيذ.</p>
+      <span class="pill">تنفيذ • إشراف • تنظيم</span>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section">
+  <div class="sectionTitle">
+    <h2>قيم نلتزم بها</h2>
+    <p>مبادئ ثابتة ترفع ثقة العميل.</p>
+  </div>
+
+  <div class="list">
+    <div class="item">
+      <b>الجودة أولًا</b>
+      <p>التزام بالمواصفات الفنية ومعايير التنفيذ المعتمدة، مع متابعة تفاصيل العمل في كل مرحلة.</p>
+    </div>
+    <div class="item">
+      <b>السلامة والتنظيم</b>
+      <p>تنظيم موقع العمل وتطبيق إجراءات السلامة لتقليل المخاطر وتحقيق بيئة عمل منضبطة.</p>
+    </div>
+    <div class="item">
+      <b>وضوح في التنفيذ</b>
+      <p>تحديد نطاق العمل بدقة، وتقديم حلول عملية، وتسليم مرتب وواضح.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn" href="gallery.html">شاهد صفحة المشاريع</a>
+    <a class="btn secondary" href="tel:0540671117">اتصال: 0540671117</a>
+    <a class="btn secondary" target="_blank" href="https://wa.me/966540671117">واتساب</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة</div>
+    <div>هاتف: 0540671117</div>
   </div>
 </footer>
+
+<a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
 
 </body>
 </html>
