@@ -241,3 +241,9 @@ a{color:inherit}
   font-size:22px;
   z-index:999;
 }
+.btn-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
