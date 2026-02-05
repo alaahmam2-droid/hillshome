@@ -1,133 +1,231 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head<title>هيلز هوم للمقاولات العامة | أسفلت وطرق وبنية تحتية</title>
-<meta name="description" content="شركة هيلز هوم للمقاولات العامة متخصصة في أعمال الأسفلت والطرق والبنية التحتية وتخطيط ودهانات الطرق في جميع أنحاء المملكة العربية السعودية.">
-<meta name="keywords" content="هيلز هوم, مقاولات عامة, أسفلت, طرق, سفلتة, بنية تحتية, مقاول طرق, تخطيط طرق">>
-  <meta charset="UTF-8">
-  <title>هيلز هوم للمقاولات العامة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="شركة هيلز هوم للمقاولات العامة – إنشاءات، بنية تحتية، أعمال الأسفلت ودهانات الطرق في جميع أنحاء المملكة.">
-  <link rel="stylesheet" href="style.css">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة هيلز هوم للمقاولات العامة</title>
+
+<style>
+:root{
+  --bg:#0b1220;
+  --panel:#0f1a33;
+  --text:#ffffff;
+  --muted:#c8d1e6;
+  --brand:#f0a500;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 12px 35px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:
+  radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+  linear-gradient(180deg,#070c17,#0b1220);
+  color:var(--text);
+}
+
+/* Header */
+.header{
+  position:sticky; top:0;
+  background:#070c17;
+  border-bottom:1px solid var(--line);
+}
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.nav a{
+  text-decoration:none;
+  color:#fff;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  margin-left:6px;
+  font-size:13px;
+}
+
+/* Hero */
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 16px;
+}
+.heroBox{
+  background:var(--panel);
+  padding:30px;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+.hero h1{
+  margin:0 0 10px;
+  color:var(--brand);
+}
+.hero p{
+  line-height:2;
+  color:var(--muted);
+}
+
+/* Sections */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 16px 0;
+}
+.section h2{
+  color:var(--brand);
+  margin-bottom:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr;}
+}
+
+.card{
+  background:var(--panel);
+  padding:20px;
+  border-radius:16px;
+  border:1px solid var(--line);
+}
+.card h3{
+  margin:0 0 8px;
+  color:#ffd27a;
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:13px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  margin-top:40px;
+}
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  border:1px solid var(--brand);
+  text-decoration:none;
+  color:#fff;
+  margin:6px;
+}
+
+/* Footer */
+footer{
+  margin-top:50px;
+  background:#070c17;
+  text-align:center;
+  padding:16px;
+  color:#aaa;
+}
+</style>
 </head>
 
 <body>
 
-<!-- ====== HEADER ====== -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">هيلز هوم للمقاولات العامة</a>
-    <nav class="nav">
+<!-- Header -->
+<div class="header">
+  <div class="wrap">
+    <strong>هيلز هوم للمقاولات العامة</strong>
+    <div class="nav">
       <a href="index.html">الرئيسية</a>
       <a href="about.html">من نحن</a>
       <a href="projects.html">خدماتنا</a>
-     <a href="gallery.html">المشاريع</a>
-      <a href="management.html">الإدارة</a>
+      <a href="gallery.html">المشاريع</a>
       <a href="contact.html">تواصل معنا</a>
-    </nav>
+    </div>
   </div>
-</header>
+</div>
 
-<!-- ====== HERO ====== -->
+<!-- Hero -->
 <section class="hero">
-  <div class="container">
+  <div class="heroBox">
     <h1>شركة هيلز هوم للمقاولات العامة</h1>
     <p>
-      خبرة راسخة في أعمال الإنشاءات والبنية التحتية  
-      <br>
-      متخصصون في تنفيذ مشاريع الأسفلت بأعلى معايير الجودة
+      نقدم حلولًا متكاملة في مجال الإنشاءات والبنية التحتية
+      وتنفيذ مشاريع الطرق والأسفلت وفق أعلى معايير الجودة
+      والسلامة، مع التزام كامل بدقة التنفيذ وتنظيم العمل.
     </p>
-    <a href="projects.html" class="btn-primary">استعرض خدماتنا</a>
   </div>
 </section>
 
-<!-- ====== ABOUT PREVIEW ====== -->
-<section class="section light">
-  <div class="container">
-    <h2>من نحن</h2>
-    <p>
-      شركة <strong>هيلز هوم للمقاولات العامة</strong> شركة سعودية متخصصة في
-      أعمال الطرق، الأسفلت، البنية التحتية، وأعمال الإنشاءات العامة.
-      نعمل وفق أعلى المواصفات الفنية وبإشراف هندسي احترافي.
-    </p>
-    <a href="about.html" class="btn-secondary">اقرأ المزيد</a>
-  </div>
-</section>
-
-<!-- ====== SERVICES ====== -->
+<!-- Services -->
 <section class="section">
-  <div class="container">
-    <h2>خدماتنا</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>أعمال الأسفلت</h3>
-        <p>تنفيذ طرق، مواقف سيارات، ساحات، ومزارع بجودة عالية.</p>
-      </div>
-      <div class="service-card">
-        <h3>دهانات وتخطيط الطرق</h3>
-        <p>تنفيذ خطوط الطرق والإشارات الأرضية وفق المعايير.</p>
-      </div>
-      <div class="service-card">
-        <h3>أعمال البنية التحتية</h3>
-        <p>شبكات، تجهيزات، وأعمال تأسيس متكاملة.</p>
-      </div>
-      <div class="service-card">
-        <h3>أعمال التربة</h3>
-        <p>صبيز، بيس كورس، وتسوية وتجهيز المواقع.</p>
-      </div>
+  <h2>خدماتنا</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>الطرق والأسفلت</h3>
+      <p>
+        تنفيذ أعمال السفلتة للمخططات والمواقف والساحات
+        من التجهيز حتى الطبقة النهائية.
+      </p>
     </div>
+
+    <div class="card">
+      <h3>البنية التحتية</h3>
+      <p>
+        تنفيذ شبكات المياه والصرف وتصريف السيول
+        وتجهيز المخططات السكنية.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>الإنشاءات</h3>
+      <p>
+        تنفيذ المباني والمرافق والساحات
+        بإشراف هندسي وتنظيم موقع احترافي.
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- ====== CONTACT CTA ====== -->
+<!-- Why Us -->
+<section class="section">
+  <h2>لماذا هيلز هوم؟</h2>
 
-<section class="contact-section">
+  <div class="grid">
 
-  <h2>تواصل معنا</h2>
+    <div class="card">
+      <h3>جودة التنفيذ</h3>
+      <p>تنفيذ مطابق للمواصفات الفنية والمعايير المعتمدة.</p>
+    </div>
 
-  <p>
-    شركة هيلز هوم للمقاولات العامة  
-    جاهزون لتنفيذ مشاريعكم في جميع أنحاء المملكة.
-  </p>
+    <div class="card">
+      <h3>إدارة منظمة</h3>
+      <p>تخطيط وإشراف وتنظيم موارد بكفاءة عالية.</p>
+    </div>
 
-  <!-- بيانات التواصل -->
-  <div class="contact-info">
-    <p>📞 رقم التواصل: 0540671117</p>
-    <p>👤 الرئيس التنفيذي: م/ علاء همام</p>
-    <p>📍 الموقع: القصيم – السعودية</p>
+    <div class="card">
+      <h3>التزام بالتسليم</h3>
+      <p>إنجاز المشاريع وفق نطاق العمل المتفق عليه.</p>
+    </div>
+
   </div>
-
-  <!-- زر واتساب -->
-  <a href="https://wa.me/966540671117" target="_blank" class="whatsapp-btn">
-    تواصل عبر واتساب
-  </a>
-
-  <!-- خريطة جوجل -->
-  <div class="map-box">
-    <iframe
-      src="https://maps.google.com/maps?q=QZz8EFNmojieZELj8&output=embed"
-      width="100%"
-      height="320"
-      style="border:0; border-radius:12px;"
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
-  </div>
-
 </section>
-<!-- ====== FOOTER ====== -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <strong>هيلز هوم للمقاولات العامة</strong><br>
-      إنشاءات • بنية تحتية • أسفلت
-    </div>
-    <div>
-      الرئيس التنفيذي: م/ علاء همام
-    </div>
-    <div>
-      © جميع الحقوق محفوظة
-    </div>
-  </div>
+
+<!-- CTA -->
+<div class="cta">
+  <a class="btn" href="contact.html">اطلب عرض سعر</a>
+  <a class="btn" href="gallery.html">استعرض المشاريع</a>
+</div>
+
+<footer>
+© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
 </footer>
 
 </body>
