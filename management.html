@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الإدارة | شركة هيلز هوم للمقاولات العامة</title>
 
 <style>
 :root{
   --bg:#0b1220;
   --panel:#0f1a33;
+  --panel2:#101f3d;
   --text:#ffffff;
   --muted:#c8d1e6;
   --brand:#f0a500;
   --line:rgba(255,255,255,.10);
+  --shadow:0 12px 35px rgba(0,0,0,.35);
 }
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Tahoma, Arial;
-  background:linear-gradient(180deg,#070c17,#0b1220);
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+    linear-gradient(180deg,#070c17,#0b1220);
   color:#fff;
 }
 
@@ -32,7 +37,10 @@ body{
   padding:14px;
   display:flex;
   justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
 }
+.brand span{font-size:12px;color:var(--muted)}
 .nav a{
   text-decoration:none;
   padding:8px 12px;
@@ -47,71 +55,112 @@ body{
 .hero{
   max-width:1100px;
   margin:auto;
-  padding:60px 16px 20px;
+  padding:60px 16px 24px;
 }
 .heroBox{
-  background:var(--panel);
-  padding:26px;
-  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  padding:30px;
+  border-radius:20px;
+  box-shadow:var(--shadow);
 }
-.hero h1{color:var(--brand);margin:0 0 10px}
+.hero h1{margin:0;color:var(--brand)}
+.hero p{margin:10px 0 0;color:var(--muted);line-height:1.9}
 
-/* Leaders */
+/* Sections */
 .section{
   max-width:1100px;
   margin:auto;
-  padding:26px 16px 0;
+  padding:30px 16px 0;
 }
+.section h2{
+  margin:0 0 14px;
+  font-size:20px;
+  color:#ffe2a5;
+}
+
+/* Leader Card */
 .leader{
-  background:#0f1a33;
-  padding:22px;
-  border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
   border:1px solid var(--line);
-  margin-top:16px;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--shadow);
 }
-.leader h3{margin:0;color:#ffd27a}
-.leader span{color:var(--brand);font-size:13px}
-.leader p{color:var(--muted);line-height:2}
-.contact{
-  margin-top:10px;
+.leader h3{
+  margin:0;
+  font-size:18px;
+  color:#ffd27a;
+}
+.role{
+  display:block;
+  margin-top:4px;
   font-size:13px;
+  color:var(--brand);
+}
+.desc{
+  margin-top:12px;
+  color:var(--muted);
+  line-height:2;
+  font-size:14px;
+}
+
+/* Responsibilities */
+.resp{
+  margin-top:14px;
+  padding-right:18px;
+}
+.resp li{
+  margin-bottom:6px;
+  color:#dfe7ff;
+  font-size:13px;
+}
+
+/* Contact line */
+.contact{
+  margin-top:14px;
+  font-size:14px;
   color:#dfe7ff;
 }
 
 /* Company Contact */
 .companyContact{
-  background:#101f3d;
-  padding:22px;
-  border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
   border:1px solid var(--line);
-  margin-top:20px;
+  border-radius:18px;
+  padding:26px;
   text-align:center;
+  box-shadow:var(--shadow);
 }
 .companyContact h3{
-  margin:0 0 8px;
+  margin:0 0 16px;
   color:#ffd27a;
 }
-.companyContact p{
-  margin:0 0 14px;
-  color:#c8d1e6;
-  font-size:18px;
-}
 
-/* Buttons */
-.btn{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:10px;
+/* Icon buttons */
+.iconBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  margin:8px;
+  font-size:24px;
   text-decoration:none;
-  margin:4px;
-  font-size:13px;
-  border:1px solid var(--brand);
   color:#fff;
 }
-.btn.whatsapp{
-  border-color:#25D366;
+.phone{background:#f0a500}
+.whatsapp{background:#25D366}
+
+/* Footer */
+footer{
+  margin-top:40px;
+  background:#070c17;
+  text-align:center;
+  padding:16px;
+  color:#aaa;
+  font-size:12px;
 }
-.btn:hover{opacity:.9}
 
 /* WhatsApp Float */
 .whatsapp-float{
@@ -129,15 +178,6 @@ body{
   font-size:24px;
   text-decoration:none;
 }
-
-/* Footer */
-footer{
-  margin-top:40px;
-  background:#070c17;
-  text-align:center;
-  padding:16px;
-  color:#aaa;
-}
 </style>
 </head>
 
@@ -146,7 +186,10 @@ footer{
 <!-- Header -->
 <div class="header">
   <div class="wrap">
-    <strong>هيلز هوم للمقاولات العامة</strong>
+    <div class="brand">
+      <strong>هيلز هوم للمقاولات العامة</strong><br>
+      <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+    </div>
     <div class="nav">
       <a href="index.html">الرئيسية</a>
       <a href="about.html">من نحن</a>
@@ -163,8 +206,9 @@ footer{
   <div class="heroBox">
     <h1>الإدارة</h1>
     <p>
-      هيكل إداري يشرف على تنفيذ المشاريع
-      وفق أعلى معايير الجودة والتنظيم.
+      تعتمد شركة هيلز هوم للمقاولات العامة على هيكل إداري
+      محترف يقود تنفيذ المشاريع بكفاءة عالية، ويضمن
+      الالتزام بالجودة والوقت والمواصفات الفنية.
     </p>
   </div>
 </section>
@@ -175,13 +219,21 @@ footer{
 
   <div class="leader">
     <h3>م / إسلام الناعم</h3>
-    <span>رئيس مجلس الإدارة</span>
-    <p>
-      يشرف على التوجه العام للشركة ووضع الاستراتيجيات
-      التي تعزز جودة التنفيذ ونمو الأعمال.
+    <span class="role">رئيس مجلس الإدارة</span>
+
+    <p class="desc">
+      مسؤول عن التوجه العام للشركة واعتماد الخطط
+      الاستراتيجية والإشراف على نمو الأعمال واستدامتها.
     </p>
+
+    <ul class="resp">
+      <li>وضع السياسات العامة للشركة</li>
+      <li>اعتماد الخطط الاستراتيجية والتوسعية</li>
+      <li>متابعة الأداء العام للإدارة التنفيذية</li>
+    </ul>
+
     <div class="contact">
-      هاتف: 0540376687
+      هاتف مباشر: 0540376687
     </div>
   </div>
 </section>
@@ -192,13 +244,22 @@ footer{
 
   <div class="leader">
     <h3>م / علاء همام</h3>
-    <span>الرئيس التنفيذي</span>
-    <p>
-      يقود الإدارة التنفيذية والإشراف المباشر
-      على مشاريع الطرق والبنية التحتية.
-     </p>
+    <span class="role">الرئيس التنفيذي</span>
+
+    <p class="desc">
+      يتولى قيادة الإدارة التنفيذية والإشراف المباشر
+      على تنفيذ مشاريع الطرق والبنية التحتية والإنشاءات،
+      وضمان تحقيق أعلى معايير الجودة.
+    </p>
+
+    <ul class="resp">
+      <li>إدارة وتنظيم فرق العمل والمشاريع</li>
+      <li>الإشراف على التنفيذ وضبط الجودة</li>
+      <li>التنسيق مع العملاء والاستشاريين</li>
+    </ul>
+
     <div class="contact">
-      هاتف:0540671117
+      هاتف مباشر: 0540671117
     </div>
   </div>
 </section>
@@ -206,15 +267,11 @@ footer{
 <!-- Company Contact -->
 <section class="section">
   <div class="companyContact">
-    <h3>رقم التواصل الرسمي للشركة</h3>
-    <p>0540671117</p>
+    <h3>التواصل الرسمي للشركة</h3>
 
-    <!-- Buttons -->
-    <a class="btn" href="tel:0540671117">اتصال مباشر</a>
-    <a class="btn whatsapp" target="_blank"
-       href="https://wa.me/966540671117">
-       واتساب
-    </a>
+    <a class="iconBtn phone" href="tel:0540671117">📞</a>
+    <a class="iconBtn whatsapp" target="_blank"
+       href="https://wa.me/966540671117">💬</a>
   </div>
 </section>
 
@@ -222,12 +279,8 @@ footer{
 © شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
 </footer>
 
-<!-- WhatsApp Float Button -->
-<a class="whatsapp-float"
-   target="_blank"
-   href="https://wa.me/966540671117">
-💬
-</a>
+<a class="whatsapp-float" target="_blank"
+   href="https://wa.me/966540671117">💬</a>
 
 </body>
 </html>
