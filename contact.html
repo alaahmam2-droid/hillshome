@@ -8,92 +8,154 @@
 <style>
 :root{
   --bg:#0b1220;
-  --panel:#0f1a33;
-  --text:#fff;
-  --muted:#c8d1e6;
   --brand:#f0a500;
-  --line:rgba(255,255,255,.1);
+  --panel:#111c33;
+  --panel2:#0d1830;
+  --line:rgba(255,255,255,.12);
+  --muted:#c8d1e6;
 }
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Tahoma;
-  background:var(--bg);
+  font-family:Tahoma, Arial;
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
+    linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
   color:#fff;
 }
 a{text-decoration:none;color:inherit}
 
 /* Header */
 header{
-  background:#071022;
-  padding:15px;
-  text-align:center;
-  font-size:20px;
+  background:rgba(7,16,34,.92);
+  border-bottom:1px solid var(--line);
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  position:sticky;
+  top:0;
+  z-index:50;
 }
+header .title{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+header .title strong{font-size:15px}
+header .title span{font-size:12px;color:var(--muted)}
 
 /* Nav */
 nav{
-  background:#0d1b34;
-  padding:12px;
-  text-align:center;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 nav a{
-  margin:5px;
-  padding:8px 14px;
-  border:1px solid var(--brand);
-  border-radius:6px;
+  padding:9px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(255,255,255,.04);
+  font-size:13px;
 }
+nav a:hover{border-color:rgba(240,165,0,.55)}
 
 /* Hero */
 .hero{
   text-align:center;
-  padding:60px 20px;
+  padding:50px 20px 20px;
 }
+.hero h1{margin:0 0 8px}
+.hero p{margin:0;color:var(--muted);line-height:1.9}
 
-/* Cards */
+/* Layout */
 .section{
-  max-width:900px;
+  max-width:980px;
   margin:auto;
   padding:20px;
 }
 .card{
-  background:#111c33;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
 }
+.card h2{margin:0 0 10px;color:#ffe2a5;font-size:16px}
+.card p{margin:0;color:var(--muted);line-height:1.9;font-size:13px}
 
-/* Icons Buttons */
+/* Icons */
 .icons{
   display:flex;
   justify-content:center;
-  gap:15px;
-  margin-top:15px;
+  gap:14px;
+  margin-top:10px;
+  flex-wrap:wrap;
 }
 .icon-btn{
-  width:60px;
-  height:60px;
+  width:58px;
+  height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:50%;
   font-size:24px;
-  background:#222;
+  background:rgba(255,255,255,.06);
   border:2px solid var(--brand);
 }
-.icon-btn:hover{
-  background:var(--brand);
-}
+.icon-btn:hover{background:rgba(240,165,0,.25)}
 
-/* WhatsApp Float */
-.whatsapp-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
+/* Form */
+.formRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+@media(max-width:750px){ .formRow{grid-template-columns:1fr} }
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:var(--panel2);
+  color:#fff;
+  outline:none;
+  margin-top:8px;
+  font-family:Tahoma, Arial;
+}
+textarea{min-height:120px; resize:vertical}
+small{color:var(--muted);line-height:1.8;display:block;margin-top:10px}
+
+/* Button */
+.btn{
+  width:100%;
+  padding:13px;
+  margin-top:12px;
+  border-radius:12px;
+  border:1px solid rgba(37,211,102,.65);
   background:#25D366;
   color:#fff;
-  padding:16px;
-  border-radius:50%;
-  font-size:24px;
+  font-size:15px;
+  cursor:pointer;
+}
+.btn:hover{opacity:.92}
+
+/* Alert */
+.alert{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(240,165,0,.45);
+  background:rgba(240,165,0,.12);
+  color:#ffe2a5;
+  font-size:13px;
+  line-height:1.8;
 }
 
 /* Map */
@@ -101,7 +163,24 @@ iframe{
   width:100%;
   height:300px;
   border:0;
-  border-radius:10px;
+  border-radius:12px;
+  margin-top:12px;
+}
+
+/* WhatsApp Float */
+.whatsapp-float{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  background:#25D366;
+  color:#fff;
+  width:56px;height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
 }
 </style>
 </head>
@@ -109,87 +188,161 @@ iframe{
 <body>
 
 <header>
-شركة هيلز هوم للمقاولات العامة
-</header>
+  <div class="title">
+    <strong>شركة هيلز هوم للمقاولات العامة</strong>
+    <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+  </div>
 
-<nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="about.html">من نحن</a>
-  <a href="projects.html">خدماتنا</a>
-  <a href="gallery.html">المشاريع</a>
-  <a href="management.html">الإدارة</a>
-  <a href="contact.html">تواصل معنا</a>
-</nav>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="projects.html">خدماتنا</a>
+    <a href="gallery.html">المشاريع</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+</header>
 
 <section class="hero">
   <h1>تواصل معنا</h1>
-  <p>اختر وسيلة التواصل المناسبة</p>
+  <p>اختر وسيلة التواصل أو أرسل طلب عرض سعر — وسيتم تجهيز رسالة واتساب تلقائيًا.</p>
 </section>
 
 <div class="section">
 
-  <!-- تواصل الشركة -->
+  <!-- أيقونات التواصل -->
   <div class="card">
-    <h2>تواصل الشركة</h2>
+    <h2>تواصل سريع</h2>
+    <p>بدون إظهار أرقام — فقط اضغط الأيقونة المناسبة.</p>
 
     <div class="icons">
-      <!-- اتصال -->
-      <a class="icon-btn"
-         href="tel:0540671117"
-         title="اتصال">📞</a>
-
-      <!-- واتساب -->
-      <a class="icon-btn"
-         target="_blank"
-         href="https://wa.me/966540671117"
-         title="واتساب">💬</a>
-
-      <!-- خرائط -->
-      <a class="icon-btn"
-         target="_blank"
-         href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7"
-         title="الموقع">📍</a>
+      <a class="icon-btn" href="tel:0540671117" title="اتصال">📞</a>
+      <a class="icon-btn" target="_blank" href="https://wa.me/966540671117" title="واتساب">💬</a>
+      <a class="icon-btn" target="_blank" href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7" title="الموقع على الخرائط">📍</a>
     </div>
+
+    <small>ملاحظة: عند الضغط يتم الاتصال/فتح الواتساب مباشرة.</small>
   </div>
 
-  <!-- الإدارة -->
+  <!-- أوقات العمل -->
   <div class="card">
-    <h2>الإدارة العليا</h2>
+    <h2>أوقات العمل</h2>
+    <p>
+      السبت إلى الخميس: <b style="color:#fff">8:00 ص – 8:00 م</b><br>
+      الجمعة: <b style="color:#fff">حسب المواعيد</b>
+    </p>
+    <small>نرتّب معاينة الموقع وتحديد نطاق العمل والمدة المتوقعة للتنفيذ.</small>
+  </div>
 
-    <p>رئيس مجلس الإدارة — م/ إسلام الناعم</p>
-    <p>الرئيس التنفيذي — م/ علاء همام</p>
+  <!-- نموذج عرض سعر -->
+  <div class="card">
+    <h2>طلب عرض سعر متكامل</h2>
+    <p>املأ البيانات واضغط “إرسال عبر واتساب” وسيتم تجهيز رسالة جاهزة.</p>
 
-    <div class="icons">
-      <!-- اتصال رئيس مجلس الإدارة -->
-      <a class="icon-btn"
-         href="tel:0540376687"
-         title="اتصال رئيس مجلس الإدارة">📞</a>
-
-      <!-- اتصال الرئيس التنفيذي -->
-      <a class="icon-btn"
-         href="tel:0540671117"
-         title="اتصال الرئيس التنفيذي">📞</a>
+    <div class="formRow">
+      <input id="name" type="text" placeholder="الاسم">
+      <input id="phone" type="tel" placeholder="رقم الجوال (اختياري)">
     </div>
+
+    <div class="formRow">
+      <select id="service">
+        <option>أعمال الطرق والأسفلت</option>
+        <option>البنية التحتية</option>
+        <option>أعمال الإنشاءات</option>
+        <option>الأعمال الترابية (صبيز / بيس كورس)</option>
+        <option>تخطيط ودهانات الطرق</option>
+        <option>ساحات ومواقف</option>
+        <option>صيانة وإعادة تأهيل</option>
+      </select>
+
+      <select id="priority">
+        <option>الأولوية: عادي</option>
+        <option>الأولوية: عاجل</option>
+      </select>
+    </div>
+
+    <div class="formRow">
+      <input id="city" type="text" placeholder="المدينة / الحي">
+      <input id="date" type="text" placeholder="موعد التنفيذ المتوقع (مثال: خلال أسبوع)">
+    </div>
+
+    <div class="formRow">
+      <select id="budget">
+        <option>ميزانية تقريبية: غير محددة</option>
+        <option>ميزانية تقريبية: أقل من 20,000</option>
+        <option>ميزانية تقريبية: 20,000 – 50,000</option>
+        <option>ميزانية تقريبية: 50,000 – 100,000</option>
+        <option>ميزانية تقريبية: أكثر من 100,000</option>
+      </select>
+
+      <select id="visit">
+        <option>طلب معاينة: نعم</option>
+        <option>طلب معاينة: لا</option>
+      </select>
+    </div>
+
+    <textarea id="details" placeholder="تفاصيل المشروع (المساحة، نوع العمل، ملاحظات...)"></textarea>
+
+    <label style="display:block;margin-top:10px;color:var(--muted);font-size:13px;">
+      رفع ملف (PDF/صور) — سيتم طلب إرساله عبر واتساب بعد الضغط:
+      <input id="file" type="file" accept=".pdf,image/*" />
+    </label>
+
+    <button class="btn" onclick="sendQuote()">إرسال عبر واتساب</button>
+
+    <div id="ok" class="alert">✅ تم تجهيز رسالة واتساب. إذا لديك ملف (PDF/صور) أرسله في نفس محادثة الواتساب بعد فتحها.</div>
+
+    <small>
+      تنبيه: الموقع ثابت (GitHub Pages) لذلك لا يمكن رفع الملف للموقع تلقائيًا.
+      لكن يمكنك إرسال الملف مباشرة داخل الواتساب بعد فتح المحادثة.
+    </small>
   </div>
 
   <!-- الخريطة -->
   <div class="card">
     <h2>موقع الشركة</h2>
-
-    <iframe
-      src="https://www.google.com/maps?q=هيلز+هوم+للمقاولات+العامة&output=embed">
-    </iframe>
-
+    <iframe src="https://www.google.com/maps?q=هيلز+هوم+للمقاولات+العامة&output=embed"></iframe>
+    <small>يمكنك فتح الاتجاهات من أيقونة 📍 بالأعلى.</small>
   </div>
 
 </div>
 
-<!-- زر واتساب عائم -->
-<a class="whatsapp-float"
-   target="_blank"
-   href="https://wa.me/966540671117">
-💬
-</a>
+<a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
+
+<script>
+function sendQuote(){
+  var name = (document.getElementById('name').value || "—").trim();
+  var phone = (document.getElementById('phone').value || "—").trim();
+  var service = (document.getElementById('service').value || "—").trim();
+  var priority = (document.getElementById('priority').value || "—").trim();
+  var city = (document.getElementById('city').value || "—").trim();
+  var date = (document.getElementById('date').value || "—").trim();
+  var budget = (document.getElementById('budget').value || "—").trim();
+  var visit = (document.getElementById('visit').value || "—").trim();
+  var details = (document.getElementById('details').value || "—").trim();
+
+  var hasFile = document.getElementById('file').files.length > 0 ? "نعم (سأرسله في الواتساب)" : "لا";
+
+  var text =
+    "السلام عليكم، طلب عرض سعر من موقع هيلز هوم\n\n" +
+    "الاسم: " + name + "\n" +
+    "الجوال: " + phone + "\n" +
+    "الخدمة: " + service + "\n" +
+    priority + "\n" +
+    "الموقع: " + city + "\n" +
+    "موعد التنفيذ: " + date + "\n" +
+    budget + "\n" +
+    visit + "\n" +
+    "ملف مرفق: " + hasFile + "\n\n" +
+    "تفاصيل المشروع:\n" + details;
+
+  document.getElementById('ok').style.display = "block";
+
+  window.open(
+    "https://wa.me/966540671117?text=" + encodeURIComponent(text),
+    "_blank"
+  );
+}
+</script>
 
 </body>
 </html>
