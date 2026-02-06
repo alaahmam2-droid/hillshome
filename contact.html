@@ -129,7 +129,6 @@ input, select, textarea{
   font-family:Tahoma, Arial;
 }
 textarea{min-height:120px; resize:vertical}
-small{color:var(--muted);display:block;margin-top:10px}
 
 /* Button */
 .btn{
@@ -154,6 +153,7 @@ small{color:var(--muted);display:block;margin-top:10px}
   background:rgba(240,165,0,.12);
   color:#ffe2a5;
   font-size:13px;
+  line-height:1.8;
 }
 
 /* Map */
@@ -207,6 +207,7 @@ iframe{
 
 <div class="section">
 
+  <!-- تواصل سريع -->
   <div class="card">
     <h2>تواصل سريع</h2>
 
@@ -217,6 +218,7 @@ iframe{
     </div>
   </div>
 
+  <!-- نموذج عرض سعر -->
   <div class="card">
     <h2>طلب عرض سعر</h2>
 
@@ -229,15 +231,9 @@ iframe{
 
     <button class="btn" onclick="sendQuote()">إرسال عبر واتساب</button>
 
-    <small>
-    بعد الضغط على “إرسال عبر واتساب” سيتم فتح المحادثة،
-    ويمكنك إرفاق صور أو ملفات المشروع مباشرة داخل الواتساب.
-    </small>
-
     <div id="ok" class="alert">
       تم تجهيز رسالة واتساب.
     </div>
-
   </div>
 
 </div>
