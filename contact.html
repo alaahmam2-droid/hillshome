@@ -129,7 +129,7 @@ input, select, textarea{
   font-family:Tahoma, Arial;
 }
 textarea{min-height:120px; resize:vertical}
-small{color:var(--muted);line-height:1.8;display:block;margin-top:10px}
+small{color:var(--muted);display:block;margin-top:10px}
 
 /* Button */
 .btn{
@@ -143,7 +143,6 @@ small{color:var(--muted);line-height:1.8;display:block;margin-top:10px}
   font-size:15px;
   cursor:pointer;
 }
-.btn:hover{opacity:.92}
 
 /* Alert */
 .alert{
@@ -155,7 +154,6 @@ small{color:var(--muted);line-height:1.8;display:block;margin-top:10px}
   background:rgba(240,165,0,.12);
   color:#ffe2a5;
   font-size:13px;
-  line-height:1.8;
 }
 
 /* Map */
@@ -204,141 +202,67 @@ iframe{
 
 <section class="hero">
   <h1>تواصل معنا</h1>
-  <p>اختر وسيلة التواصل أو أرسل طلب عرض سعر — وسيتم تجهيز رسالة واتساب تلقائيًا.</p>
+  <p>اختر وسيلة التواصل أو أرسل طلب عرض سعر وسيتم تجهيز رسالة واتساب تلقائيًا.</p>
 </section>
 
 <div class="section">
 
-  <!-- أيقونات التواصل -->
   <div class="card">
     <h2>تواصل سريع</h2>
-    <p>— فقط اضغط الأيقونة المناسبة.</p>
 
     <div class="icons">
-      <a class="icon-btn" href="tel:0540671117" title="اتصال">📞</a>
-      <a class="icon-btn" target="_blank" href="https://wa.me/966540671117" title="واتساب">💬</a>
-      <a class="icon-btn" target="_blank" href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7" title="الموقع على الخرائط">📍</a>
+      <a class="icon-btn" href="tel:0540671117">📞</a>
+      <a class="icon-btn" target="_blank" href="https://wa.me/966540671117">💬</a>
+      <a class="icon-btn" target="_blank" href="https://maps.app.goo.gl/fAqaiRdfbzhzJgXk7">📍</a>
     </div>
-
-    <small>ملاحظة: عند الضغط يتم الاتصال/فتح الواتساب مباشرة.</small>
   </div>
 
-  <!-- أوقات العمل -->
   <div class="card">
-    <h2>أوقات العمل</h2>
-    <p>
-      السبت إلى الخميس: <b style="color:#fff">8:00 ص – 8:00 م</b><br>
-      الجمعة: <b style="color:#fff">حسب المواعيد</b>
-    </p>
-    <small>نرتّب معاينة الموقع وتحديد نطاق العمل والمدة المتوقعة للتنفيذ.</small>
-  </div>
-
-  <!-- نموذج عرض سعر -->
-  <div class="card">
-    <h2>طلب عرض سعر متكامل</h2>
-    <p>املأ البيانات واضغط “إرسال عبر واتساب” وسيتم تجهيز رسالة جاهزة.</p>
+    <h2>طلب عرض سعر</h2>
 
     <div class="formRow">
       <input id="name" type="text" placeholder="الاسم">
-      <input id="phone" type="tel" placeholder="رقم الجوال (اختياري)">
+      <input id="phone" type="tel" placeholder="رقم الجوال">
     </div>
 
-    <div class="formRow">
-      <select id="service">
-        <option>أعمال الطرق والأسفلت</option>
-        <option>البنية التحتية</option>
-        <option>أعمال الإنشاءات</option>
-        <option>الأعمال الترابية (صبيز / بيس كورس)</option>
-        <option>تخطيط ودهانات الطرق</option>
-        <option>ساحات ومواقف</option>
-        <option>صيانة وإعادة تأهيل</option>
-      </select>
-
-      <select id="priority">
-        <option>الأولوية: عادي</option>
-        <option>الأولوية: عاجل</option>
-      </select>
-    </div>
-
-    <div class="formRow">
-      <input id="city" type="text" placeholder="المدينة / الحي">
-      <input id="date" type="text" placeholder="موعد التنفيذ المتوقع (مثال: خلال أسبوع)">
-    </div>
-
-    <div class="formRow">
-      <select id="budget">
-        <option>ميزانية تقريبية: غير محددة</option>
-        <option>ميزانية تقريبية: أقل من 20,000</option>
-        <option>ميزانية تقريبية: 20,000 – 50,000</option>
-        <option>ميزانية تقريبية: 50,000 – 100,000</option>
-        <option>ميزانية تقريبية: أكثر من 100,000</option>
-      </select>
-
-      <select id="visit">
-        <option>طلب معاينة: نعم</option>
-        <option>طلب معاينة: لا</option>
-      </select>
-    </div>
-
-    <textarea id="details" placeholder="تفاصيل المشروع (المساحة، نوع العمل، ملاحظات...)"></textarea>
-
-    <label style="display:block;margin-top:10px;color:var(--muted);font-size:13px;">
-      رفع ملف (PDF/صور) — سيتم طلب إرساله عبر واتساب بعد الضغط:
-      <input id="file" type="file" accept=".pdf,image/*" />
-    </label>
+    <textarea id="details" placeholder="تفاصيل المشروع"></textarea>
 
     <button class="btn" onclick="sendQuote()">إرسال عبر واتساب</button>
 
-    <div id="ok" class="alert">✅ تم تجهيز رسالة واتساب. إذا لديك ملف (PDF/صور) أرسله في نفس محادثة الواتساب بعد فتحها.</div>
-
     <small>
-      تنبيه: الموقع ثابت (GitHub Pages) لذلك لا يمكن رفع الملف للموقع تلقائيًا.
-      لكن يمكنك إرسال الملف مباشرة داخل الواتساب بعد فتح المحادثة.
+    بعد الضغط على “إرسال عبر واتساب” سيتم فتح المحادثة،
+    ويمكنك إرفاق صور أو ملفات المشروع مباشرة داخل الواتساب.
     </small>
-  </div>
 
-  <!-- الخريطة -->
-  <div class="card">
-    <h2>موقع الشركة</h2>
-    <iframe src="https://www.google.com/maps?q=هيلز+هوم+للمقاولات+العامة&output=embed"></iframe>
-    <small>يمكنك فتح الاتجاهات من أيقونة 📍 بالأعلى.</small>
+    <div id="ok" class="alert">
+      تم تجهيز رسالة واتساب.
+    </div>
+
   </div>
 
 </div>
 
-<a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
+<a class="whatsapp-float"
+   target="_blank"
+   href="https://wa.me/966540671117">💬</a>
 
 <script>
 function sendQuote(){
-  var name = (document.getElementById('name').value || "—").trim();
-  var phone = (document.getElementById('phone').value || "—").trim();
-  var service = (document.getElementById('service').value || "—").trim();
-  var priority = (document.getElementById('priority').value || "—").trim();
-  var city = (document.getElementById('city').value || "—").trim();
-  var date = (document.getElementById('date').value || "—").trim();
-  var budget = (document.getElementById('budget').value || "—").trim();
-  var visit = (document.getElementById('visit').value || "—").trim();
-  var details = (document.getElementById('details').value || "—").trim();
-
-  var hasFile = document.getElementById('file').files.length > 0 ? "نعم (سأرسله في الواتساب)" : "لا";
+  var name = document.getElementById('name').value || "—";
+  var phone = document.getElementById('phone').value || "—";
+  var details = document.getElementById('details').value || "—";
 
   var text =
-    "السلام عليكم، طلب عرض سعر من موقع هيلز هوم\n\n" +
-    "الاسم: " + name + "\n" +
-    "الجوال: " + phone + "\n" +
-    "الخدمة: " + service + "\n" +
-    priority + "\n" +
-    "الموقع: " + city + "\n" +
-    "موعد التنفيذ: " + date + "\n" +
-    budget + "\n" +
-    visit + "\n" +
-    "ملف مرفق: " + hasFile + "\n\n" +
-    "تفاصيل المشروع:\n" + details;
+  "طلب عرض سعر\n\n" +
+  "الاسم: " + name + "\n" +
+  "الجوال: " + phone + "\n\n" +
+  "التفاصيل:\n" + details;
 
-  document.getElementById('ok').style.display = "block";
+  document.getElementById('ok').style.display="block";
 
   window.open(
-    "https://wa.me/966540671117?text=" + encodeURIComponent(text),
+    "https://wa.me/966540671117?text=" +
+    encodeURIComponent(text),
     "_blank"
   );
 }
