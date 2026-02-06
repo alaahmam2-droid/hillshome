@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تواصل معنا | هيلز هوم</title>
+<title>تواصل معنا | شركة هيلز هوم للمقاولات العامة</title>
 
 <style>
 :root{
@@ -15,13 +16,14 @@
   --muted:#c8d1e6;
 }
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Tahoma, Arial;
   background:
     radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
     radial-gradient(900px 500px at 85% 0%, rgba(80,120,255,.10), transparent 55%),
-    linear-gradient(180deg, #070c17 0%, var(--bg) 55%, #070c17 100%);
+    linear-gradient(180deg,#070c17,var(--bg));
   color:#fff;
 }
 a{text-decoration:none;color:inherit}
@@ -34,25 +36,8 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
   position:sticky;
   top:0;
-  z-index:50;
-}
-header .title{
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
-header .title strong{font-size:15px}
-header .title span{font-size:12px;color:var(--muted)}
-
-/* Nav */
-nav{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  justify-content:center;
 }
 nav a{
   padding:9px 12px;
@@ -61,15 +46,16 @@ nav a{
   background:rgba(255,255,255,.04);
   font-size:13px;
 }
-nav a:hover{border-color:rgba(240,165,0,.55)}
 
 /* Hero */
 .hero{
   text-align:center;
   padding:50px 20px 20px;
 }
-.hero h1{margin:0 0 8px}
-.hero p{margin:0;color:var(--muted);line-height:1.9}
+.hero p{
+  color:var(--muted);
+  line-height:1.9;
+}
 
 /* Layout */
 .section{
@@ -84,8 +70,11 @@ nav a:hover{border-color:rgba(240,165,0,.55)}
   padding:18px;
   margin-bottom:14px;
 }
-.card h2{margin:0 0 10px;color:#ffe2a5;font-size:16px}
-.card p{margin:0;color:var(--muted);line-height:1.9;font-size:13px}
+.card h2{
+  margin:0 0 10px;
+  color:#ffe2a5;
+  font-size:16px;
+}
 
 /* Icons */
 .icons{
@@ -93,11 +82,9 @@ nav a:hover{border-color:rgba(240,165,0,.55)}
   justify-content:center;
   gap:14px;
   margin-top:10px;
-  flex-wrap:wrap;
 }
 .icon-btn{
-  width:58px;
-  height:58px;
+  width:58px;height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -106,7 +93,6 @@ nav a:hover{border-color:rgba(240,165,0,.55)}
   background:rgba(255,255,255,.06);
   border:2px solid var(--brand);
 }
-.icon-btn:hover{background:rgba(240,165,0,.25)}
 
 /* Form */
 .formRow{
@@ -115,54 +101,35 @@ nav a:hover{border-color:rgba(240,165,0,.55)}
   gap:10px;
   margin-top:10px;
 }
-@media(max-width:750px){ .formRow{grid-template-columns:1fr} }
-
-input, select, textarea{
+input,textarea{
   width:100%;
   padding:12px;
   border-radius:12px;
   border:1px solid var(--line);
   background:var(--panel2);
   color:#fff;
-  outline:none;
   margin-top:8px;
-  font-family:Tahoma, Arial;
 }
-textarea{min-height:120px; resize:vertical}
+textarea{min-height:120px}
 
-/* Button */
 .btn{
   width:100%;
   padding:13px;
   margin-top:12px;
   border-radius:12px;
-  border:1px solid rgba(37,211,102,.65);
+  border:1px solid #25D366;
   background:#25D366;
   color:#fff;
   font-size:15px;
-  cursor:pointer;
-}
-
-/* Alert */
-.alert{
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid rgba(240,165,0,.45);
-  background:rgba(240,165,0,.12);
-  color:#ffe2a5;
-  font-size:13px;
-  line-height:1.8;
 }
 
 /* Map */
-iframe{
+.map iframe{
   width:100%;
-  height:300px;
+  height:320px;
   border:0;
   border-radius:12px;
-  margin-top:12px;
+  margin-top:10px;
 }
 
 /* WhatsApp Float */
@@ -185,11 +152,9 @@ iframe{
 
 <body>
 
+<!-- Header -->
 <header>
-  <div class="title">
-    <strong>شركة هيلز هوم للمقاولات العامة</strong>
-    <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
-  </div>
+  <strong>شركة هيلز هوم للمقاولات العامة</strong>
 
   <nav>
     <a href="index.html">الرئيسية</a>
@@ -200,9 +165,12 @@ iframe{
   </nav>
 </header>
 
+<!-- Hero -->
 <section class="hero">
   <h1>تواصل معنا</h1>
-  <p>اختر وسيلة التواصل أو أرسل طلب عرض سعر وسيتم تجهيز رسالة واتساب تلقائيًا.</p>
+  <p>
+    اختر وسيلة التواصل أو أرسل طلب عرض سعر وسيتم تجهيز رسالة واتساب تلقائيًا.
+  </p>
 </section>
 
 <div class="section">
@@ -231,13 +199,30 @@ iframe{
 
     <button class="btn" onclick="sendQuote()">إرسال عبر واتساب</button>
 
-    <div id="ok" class="alert">
-      تم تجهيز رسالة واتساب.
-    </div>
+    <small>
+    بعد الضغط على “إرسال عبر واتساب” سيتم فتح المحادثة،
+    ويمكنك إرفاق صور أو ملفات المشروع مباشرة داخل الواتساب.
+    </small>
+
+  </div>
+
+  <!-- الخريطة -->
+  <div class="card map">
+    <h2>موقع الشركة</h2>
+
+    <p style="color:var(--muted);line-height:1.9">
+      يمكنك زيارة موقعنا أو فتح الاتجاهات عبر خرائط Google.
+    </p>
+
+    <iframe
+      src="https://www.google.com/maps?q=هيلز+هوم+للمقاولات+العامة&output=embed">
+    </iframe>
+
   </div>
 
 </div>
 
+<!-- زر واتساب -->
 <a class="whatsapp-float"
    target="_blank"
    href="https://wa.me/966540671117">💬</a>
@@ -253,8 +238,6 @@ function sendQuote(){
   "الاسم: " + name + "\n" +
   "الجوال: " + phone + "\n\n" +
   "التفاصيل:\n" + details;
-
-  document.getElementById('ok').style.display="block";
 
   window.open(
     "https://wa.me/966540671117?text=" +
