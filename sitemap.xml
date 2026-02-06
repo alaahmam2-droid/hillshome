@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://alaahmam2-droid.github.io/hillshome/</loc>
+    <loc>https://hillshome.com.sa/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://alaahmam2-droid.github.io/hillshome/about.html</loc>
+    <loc>https://hillshome.com.sa/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://alaahmam2-droid.github.io/hillshome/projects.html</loc>
+    <loc>https://hillshome.com.sa/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://alaahmam2-droid.github.io/hillshome/contact.html</loc>
+    <loc>https://hillshome.com.sa/projects.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <url>
+    <loc>https://hillshome.com.sa/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
