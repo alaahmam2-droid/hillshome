@@ -1,289 +1,203 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شركة هيلز هوم للمقاولات العامة</title>
-
-<style>
-
-/* ===== الأساس ===== */
-:root{
-  --bg:#0b1220;
-  --panel:#0f1a33;
-  --text:#ffffff;
-  --muted:#c8d1e6;
-  --brand:#f0a500;
-  --line:rgba(255,255,255,.10);
-  --shadow:0 12px 35px rgba(0,0,0,.35);
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Tahoma, Arial;
-  background:
-  radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
-  linear-gradient(180deg,#070c17,#0b1220);
-  color:var(--text);
-}
-
-/* ===== الهيدر ===== */
-.header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:#070c17;
-  border-bottom:1px solid var(--line);
-}
-
-.wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-/* القوائم */
-.nav{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
-.nav a{
-  text-decoration:none;
-  color:#fff;
-  padding:8px 12px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  font-size:13px;
-}
-
-/* ===== الشعار ===== */
-.logoCenter{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  justify-content:center;
-  flex:1;
-  min-width:260px;
-}
-
-.logoText{
-  text-align:center;
-  line-height:1.2;
-}
-
-.logoText strong{font-size:16px}
-.logoText span{font-size:12px;color:var(--muted)}
-
-/* إطار ذهبي + توهج + حركة */
-.logoOrb{
-  width:95px;
-  height:95px;
-  border-radius:50%;
-  padding:4px;
-  background:
-  radial-gradient(circle at 30% 30%, #ffd27a, #f0a500, #7a4b00);
-  box-shadow:
-  0 0 18px rgba(240,165,0,.35),
-  0 12px 30px rgba(0,0,0,.45);
-  animation:spin 14s linear infinite;
-}
-
-.logoOrb img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-}
-
-/* حركة دائرية */
-@keyframes spin{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
-}
-
-/* ===== Hero ===== */
-.hero{
-  max-width:1100px;
-  margin:auto;
-  padding:70px 16px;
-}
-
-.heroBox{
-  background:var(--panel);
-  padding:30px;
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  text-align:center;
-}
-
-.hero h1{
-  margin:0 0 10px;
-  color:var(--brand);
-}
-
-.hero p{
-  line-height:2;
-  color:var(--muted);
-}
-
-/* ===== الخدمات ===== */
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 16px 0;
-}
-
-.section h2{
-  color:var(--brand);
-  margin-bottom:14px;
-  text-align:center;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
-}
-
-.card{
-  background:var(--panel);
-  padding:20px;
-  border-radius:16px;
-  border:1px solid var(--line);
-}
-
-.card h3{
-  margin:0 0 8px;
-  color:#ffd27a;
-}
-
-.card p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.9;
-  font-size:13px;
-}
-
-/* ===== أزرار ===== */
-.cta{
-  text-align:center;
-  margin-top:40px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:12px;
-  border:1px solid var(--brand);
-  text-decoration:none;
-  color:#fff;
-  margin:6px;
-}
-
-/* ===== الفوتر ===== */
-footer{
-  margin-top:50px;
-  background:#070c17;
-  text-align:center;
-  padding:16px;
-  color:#aaa;
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هيلز هوم للمقاولات العامة</title>
+  <meta name="description" content="شركة هيلز هوم للمقاولات العامة — إنشاءات، بنية تحتية، طرق وأسفلت. تنفيذ احترافي وفق أعلى معايير الجودة والسلامة." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- ===== Header ===== -->
-<div class="header">
-  <div class="wrap">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner headerCenter">
 
-    <div class="nav">
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html">من نحن</a>
-      <a href="projects.html">خدماتنا</a>
-    </div>
+      <div class="logoCenter">
 
-    <div class="logoCenter">
+        <div class="logoOrb">
+          <img src="assets/file_00000000348c71f4b220c76a4baab7e0.png" alt="شعار هيلز هوم">
+        </div>
 
-      <div class="logoOrb">
-        <img src="assets/file_00000000348c71f4b220c76a4baab7e0.png" alt="شعار هيلز هوم">
+        <div class="logoTextCenter">
+          <strong>هيلز هوم للمقاولات العامة</strong>
+          <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+        </div>
+
+        <nav class="nav navCenter" aria-label="القائمة الرئيسية">
+          <a href="index.html">الرئيسية</a>
+          <a href="about.html">من نحن</a>
+          <a href="projects.html">خدماتنا</a>
+          <a href="gallery.html">المشاريع</a>
+          <a href="contact.html">تواصل معنا</a>
+        </nav>
+
       </div>
 
-      <div class="logoText">
-        <strong>هيلز هوم للمقاولات العامة</strong>
-        <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>تنفيذ احترافي لمشاريع الطرق والأسفلت والبنية التحتية</h1>
+      <p>
+        نُقدّم حلولًا متكاملة تبدأ من أعمال التهيئة والتربة (صبيز/بيس كورس) مرورًا بالسفلتة والدهانات،
+        وحتى أعمال البنية التحتية والإنشاءات — بإشراف هندسي وتنظيم موقع عالي.
+      </p>
+
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn-primary" href="contact.html">اطلب عرض سعر</a>
+        <a class="btn-secondary" href="gallery.html">استعرض المشاريع</a>
       </div>
 
+      <!-- Trust Badges -->
+      <div class="services-grid" style="margin-top:22px">
+        <div class="service-card">
+          <h3>جودة وفق المواصفات</h3>
+          <p>التزام بمعايير الجودة والسلامة ومواد تنفيذ معتمدة.</p>
+        </div>
+        <div class="service-card">
+          <h3>إدارة موقع منظمة</h3>
+          <p>خطة عمل واضحة، إشراف، وتوثيق مراحل التنفيذ.</p>
+        </div>
+        <div class="service-card">
+          <h3>التزام بالمدة</h3>
+          <p>تنفيذ وتسليم حسب نطاق العمل والجدول المتفق عليه.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="nav">
-      <a href="gallery.html">المشاريع</a>
-      <a href="contact.html">تواصل معنا</a>
+  <!-- Services -->
+  <section class="section dark">
+    <div class="container">
+      <h2>خدماتنا الأساسية</h2>
+      <p>خدمات متخصصة تناسب المخططات، المزارع، المواقف، الساحات، والطرق الداخلية والخارجية.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>الطرق والأسفلت</h3>
+          <p>سفلتة طرق/مواقف/ساحات + كشط/إعادة سفلتة + طبقات أساس وإسفلت نهائي.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>دهانات وتخطيط الطرق</h3>
+          <p>دهانات أرضية، تخطيط مسارات، معايير مرور، لوحات وتحذيرات حسب الحاجة.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>أعمال التربة والتهيئة</h3>
+          <p>صبيز، بيس كورس، تسوية ودك، تجهيز الموقع قبل السفلتة وفق طبقات صحيحة.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>البنية التحتية</h3>
+          <p>شبكات مياه وصرف وتصريف سيول، غرف تفتيش، تمديدات وتجهيز مخططات.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>الإنشاءات</h3>
+          <p>تنفيذ مباني ومرافق وساحات بإشراف هندسي وتنظيم عمل احترافي.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>المعاينة والتسعير</h3>
+          <p>معاينة الموقع، تحديد نطاق العمل، وتقديم عرض سعر واضح ومفصل.</p>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn-primary" href="projects.html">تفاصيل الخدمات</a>
+        <a class="btn-secondary" href="contact.html">تواصل الآن</a>
+      </div>
     </div>
+  </section>
 
-  </div>
-</div>
+  <!-- Quick Quote -->
+  <section class="section light" id="quote">
+    <div class="container">
+      <h2>نموذج عرض السعر السريع</h2>
+      <p>عبّئ البيانات وسيتم تجهيز رسالة احترافية تلقائيًا وإرسالها عبر واتساب.</p>
 
-<!-- ===== Hero ===== -->
-<section class="hero">
-  <div class="heroBox">
-    <h1>شركة هيلز هوم للمقاولات العامة</h1>
-    <p>
-      نقدم حلولًا متكاملة في مجال الإنشاءات والبنية التحتية
-      وتنفيذ مشاريع الطرق والأسفلت وفق أعلى معايير الجودة
-      والسلامة مع التزام كامل بدقة التنفيذ وتنظيم العمل.
-    </p>
-  </div>
-</section>
+      <div class="contact-box">
+        <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div>
+            <label style="display:block;color:#cbd5e1;margin-bottom:6px">الاسم</label>
+            <input id="q_name" type="text" placeholder="اكتب اسمك" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.55);color:#fff;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;color:#cbd5e1;margin-bottom:6px">رقم الجوال</label>
+            <input id="q_phone" type="tel" placeholder="05xxxxxxxx" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.55);color:#fff;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;color:#cbd5e1;margin-bottom:6px">نوع الخدمة</label>
+            <select id="q_service" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.55);color:#fff;outline:none;">
+              <option>طرق وأسفلت</option>
+              <option>دهانات وتخطيط طرق</option>
+              <option>أعمال التربة (صبيز/بيس كورس)</option>
+              <option>بنية تحتية</option>
+              <option>إنشاءات</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;color:#cbd5e1;margin-bottom:6px">المدينة / الموقع</label>
+            <input id="q_city" type="text" placeholder="مثال: القصيم" style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.55);color:#fff;outline:none;">
+          </div>
+        </div>
 
-<!-- ===== الخدمات ===== -->
-<section class="section">
-  <h2>خدماتنا</h2>
+        <div style="margin-top:12px">
+          <label style="display:block;color:#cbd5e1;margin-bottom:6px">تفاصيل الطلب</label>
+          <textarea id="q_details" placeholder="المساحة/الطول/العرض، الحالة الحالية، المدة المطلوبة..." style="width:100%;min-height:120px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.55);color:#fff;outline:none;resize:vertical;"></textarea>
+        </div>
 
-  <div class="grid">
+        <div class="btn-row">
+          <button class="btn-primary" type="button" onclick="sendQuote()">إرسال طلب العرض عبر واتساب</button>
+          <a class="btn-secondary" href="contact.html">صفحة التواصل</a>
+        </div>
 
-    <div class="card">
-      <h3>الطرق والأسفلت</h3>
-      <p>تنفيذ أعمال السفلتة للمخططات والمواقف والساحات بجودة عالية.</p>
+        <p style="color:#cbd5e1;margin:10px 0 0;line-height:1.9">
+          ✅ الرد سريع — ويمكن ترتيب معاينة الموقع وتحديد نطاق العمل بدقة.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>البنية التحتية</h3>
-      <p>تنفيذ شبكات المياه والصرف وتصريف السيول وتجهيز المخططات.</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة</div>
+      <div>إنشاءات • بنية تحتية • طرق وأسفلت</div>
     </div>
+  </footer>
 
-    <div class="card">
-      <h3>الإنشاءات</h3>
-      <p>تنفيذ المباني والمرافق والساحات بإشراف هندسي احترافي.</p>
-    </div>
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float" target="_blank" href="https://wa.me/966540671117" aria-label="WhatsApp">💬</a>
 
-  </div>
-</section>
+  <script>
+    function sendQuote(){
+      var name = document.getElementById('q_name').value.trim();
+      var phone = document.getElementById('q_phone').value.trim();
+      var service = document.getElementById('q_service').value;
+      var city = document.getElementById('q_city').value.trim();
+      var details = document.getElementById('q_details').value.trim();
 
-<!-- ===== CTA ===== -->
-<div class="cta">
-  <a class="btn" href="contact.html">اطلب عرض سعر</a>
-  <a class="btn" href="gallery.html">استعرض المشاريع</a>
-</div>
+      var text =
+        "السلام عليكم،\n" +
+        "أرغب في عرض سعر من هيلز هوم للمقاولات العامة.\n\n" +
+        "الاسم: " + (name || "—") + "\n" +
+        "الجوال: " + (phone || "—") + "\n" +
+        "الخدمة: " + (service || "—") + "\n" +
+        "الموقع/المدينة: " + (city || "—") + "\n\n" +
+        "تفاصيل الطلب:\n" + (details || "—") + "\n\n" +
+        "وشكرًا لكم.";
 
-<footer>
-© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
-</footer>
+      var url = "https://wa.me/966540671117?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }
+  </script>
 
 </body>
 </html>
