@@ -349,3 +349,42 @@ a{color:inherit}
   .logoTextCenter strong{ font-size:18px; }
   .footer-inner{justify-content:center;text-align:center}
 }
+/* ===== Smart Sticky Header ===== */
+
+.site-header{
+  position:relative;
+  width:100%;
+  transition: all .35s ease;
+  z-index:999;
+}
+
+/* عند النزول */
+.site-header.scrolled{
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(11,18,32,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+/* تصغير الشعار عند التثبيت */
+.site-header.scrolled .logoOrb{
+  width:90px;
+  height:90px;
+}
+
+.site-header.scrolled .logoOrb img{
+  width:90px;
+  height:90px;
+}
+
+/* تصغير النص */
+.site-header.scrolled .logoTextCenter strong{
+  font-size:15px;
+}
+
+.site-header.scrolled .logoTextCenter span{
+  font-size:11px;
+}
