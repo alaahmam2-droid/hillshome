@@ -1,132 +1,201 @@
-<!DOCTYPE html>    <html lang="ar" dir="rtl">    
-<head>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-<title>شركة هيلز هوم للمقاولات العامة</title>    <style>    
-:root{    
-  --bg:#0b1220;    
-  --panel:#0f1a33;    
-  --text:#ffffff;    
-  --muted:#c8d1e6;    
-  --brand:#f0a500;    
-  --line:rgba(255,255,255,.10);    
-  --shadow:0 12px 35px rgba(0,0,0,.35);    
-}    
-*{box-sizing:border-box}    
-body{    
-  margin:0;    
-  font-family:Tahoma, Arial;    
-  background:    
-  radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),    
-  linear-gradient(180deg,#070c17,#0b1220);    
-  color:var(--text);    
-}    
-    
-/* Header */    
-.header{    
-  position:sticky; top:0;    
-  background:#070c17;    
-  border-bottom:1px solid var(--line);    
-}    
-.wrap{    
-  max-width:1100px;    
-  margin:auto;    
-  padding:14px 16px;    
-  display:flex;    
-  justify-content:space-between;    
-  align-items:center;    
-}    
-.nav a{    
-  text-decoration:none;    
-  color:#fff;    
-  padding:8px 12px;    
-  border:1px solid var(--line);    
-  border-radius:10px;    
-  margin-left:6px;    
-  font-size:13px;    
-}    
-    
-/* Hero */    
-.hero{    
-  max-width:1100px;    
-  margin:auto;    
-  padding:70px 16px;    
-}    
-.heroBox{    
-  background:var(--panel);    
-  padding:30px;    
-  border-radius:18px;    
-  box-shadow:var(--shadow);    
-}    
-.hero h1{    
-  margin:0 0 10px;    
-  color:var(--brand);    
-}    
-.hero p{    
-  line-height:2;    
-  color:var(--muted);    
-}    
-    
-/* Sections */    
-.section{    
-  max-width:1100px;    
-  margin:auto;    
-  padding:40px 16px 0;    
-}    
-.section h2{    
-  color:var(--brand);    
-  margin-bottom:14px;    
-}    
-    
-.grid{    
-  display:grid;    
-  grid-template-columns:repeat(3,1fr);    
-  gap:14px;    
-}    
-@media(max-width:900px){    
-  .grid{grid-template-columns:1fr;}    
-}    
-    
-.card{    
-  background:var(--panel);    
-  padding:20px;    
-  border-radius:16px;    
-  border:1px solid var(--line);    
-}    
-.card h3{    
-  margin:0 0 8px;    
-  color:#ffd27a;    
-}    
-.card p{    
-  margin:0;    
-  color:var(--muted);    
-  line-height:1.9;    
-  font-size:13px;    
-}    
-    
-/* CTA */    
-.cta{    
-  text-align:center;    
-  margin-top:40px;    
-}    
-.btn{    
-  display:inline-block;    
-  padding:12px 20px;    
-  border-radius:12px;    
-  border:1px solid var(--brand);    
-  text-decoration:none;    
-  color:#fff;    
-  margin:6px;    
-}    
-    
-/* Footer */    
-footer{    
-  margin-top:50px;    
-  background:#070c17;    
-  text-align:center;    
-  padding:16px;    
-  color:#aaa;    
-}   footer{
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة هيلز هوم للمقاولات العامة</title>
+
+<style>
+
+/* ===== الأساس ===== */
+:root{
+  --bg:#0b1220;
+  --panel:#0f1a33;
+  --text:#ffffff;
+  --muted:#c8d1e6;
+  --brand:#f0a500;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 12px 35px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Tahoma, Arial;
+  background:
+  radial-gradient(900px 500px at 20% 10%, rgba(240,165,0,.12), transparent 60%),
+  linear-gradient(180deg,#070c17,#0b1220);
+  color:var(--text);
+}
+
+/* ===== الهيدر ===== */
+.header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#070c17;
+  border-bottom:1px solid var(--line);
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* القوائم */
+.nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#fff;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font-size:13px;
+}
+
+/* ===== الشعار ===== */
+.logoCenter{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  flex:1;
+  min-width:260px;
+}
+
+.logoText{
+  text-align:center;
+  line-height:1.2;
+}
+
+.logoText strong{font-size:16px}
+.logoText span{font-size:12px;color:var(--muted)}
+
+/* إطار ذهبي + توهج + حركة */
+.logoOrb{
+  width:95px;
+  height:95px;
+  border-radius:50%;
+  padding:4px;
+  background:
+  radial-gradient(circle at 30% 30%, #ffd27a, #f0a500, #7a4b00);
+  box-shadow:
+  0 0 18px rgba(240,165,0,.35),
+  0 12px 30px rgba(0,0,0,.45);
+  animation:spin 14s linear infinite;
+}
+
+.logoOrb img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* حركة دائرية */
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+/* ===== Hero ===== */
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 16px;
+}
+
+.heroBox{
+  background:var(--panel);
+  padding:30px;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:var(--brand);
+}
+
+.hero p{
+  line-height:2;
+  color:var(--muted);
+}
+
+/* ===== الخدمات ===== */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 16px 0;
+}
+
+.section h2{
+  color:var(--brand);
+  margin-bottom:14px;
+  text-align:center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
+
+.card{
+  background:var(--panel);
+  padding:20px;
+  border-radius:16px;
+  border:1px solid var(--line);
+}
+
+.card h3{
+  margin:0 0 8px;
+  color:#ffd27a;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:13px;
+}
+
+/* ===== أزرار ===== */
+.cta{
+  text-align:center;
+  margin-top:40px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  border:1px solid var(--brand);
+  text-decoration:none;
+  color:#fff;
+  margin:6px;
+}
+
+/* ===== الفوتر ===== */
+footer{
   margin-top:50px;
   background:#070c17;
   text-align:center;
@@ -134,136 +203,87 @@ footer{
   color:#aaa;
 }
 
-/* Logo */
-.logoBrand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+</style>
+</head>
 
-.logoImg{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  object-fit:cover;
-  border:1px solid rgba(255,255,255,.15);
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
+<body>
 
-.logoText{
-  display:flex;
-  flex-direction:column;
-  line-height:1.2;
-}
+<!-- ===== Header ===== -->
+<div class="header">
+  <div class="wrap">
 
-.logoText strong{
-  font-size:15px;
-}
+    <div class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="projects.html">خدماتنا</a>
+    </div>
 
-.logoText span{
-  font-size:12px;
-  color:#c8d1e6;
-} 
-</style>    </head>    <body>    <!-- Header -->     <div class="header">
-  <div class="wrap headerCenter">
     <div class="logoCenter">
 
       <div class="logoOrb">
         <img src="assets/file_00000000348c71f4b220c76a4baab7e0.png" alt="شعار هيلز هوم">
       </div>
 
-      <div class="logoTextCenter">
+      <div class="logoText">
         <strong>هيلز هوم للمقاولات العامة</strong>
         <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
       </div>
 
-      <div class="nav navCenter">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="projects.html">خدماتنا</a>
-        <a href="gallery.html">المشاريع</a>
-        <a href="contact.html">تواصل معنا</a>
-      </div>
-
     </div>
+
+    <div class="nav">
+      <a href="gallery.html">المشاريع</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+
   </div>
 </div>
-    <div class="logoBrand">
 
-  <img class="logoImg"
-       src="assets/file_00000000348c71f4b220c76a4baab7e0.png"
-       alt="شعار هيلز هوم">
-
-  <div class="logoText">
-    <strong>هيلز هوم للمقاولات العامة</strong>
-    <span>إنشاءات • بنية تحتية • طرق وأسفلت</span>
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="heroBox">
+    <h1>شركة هيلز هوم للمقاولات العامة</h1>
+    <p>
+      نقدم حلولًا متكاملة في مجال الإنشاءات والبنية التحتية
+      وتنفيذ مشاريع الطرق والأسفلت وفق أعلى معايير الجودة
+      والسلامة مع التزام كامل بدقة التنفيذ وتنظيم العمل.
+    </p>
   </div>
+</section>
 
-</div>    
-    <div class="nav">    
-      <a href="index.html">الرئيسية</a>    
-      <a href="about.html">من نحن</a>    
-      <a href="projects.html">خدماتنا</a>    
-      <a href="gallery.html">المشاريع</a>    
-      <a href="contact.html">تواصل معنا</a>    
-    </div>    
-  </div>    
-</div>    <!-- Hero -->    <section class="hero">    
-  <div class="heroBox">    
-    <h1>شركة هيلز هوم للمقاولات العامة</h1>    
-    <p>    
-      نقدم حلولًا متكاملة في مجال الإنشاءات والبنية التحتية    
-      وتنفيذ مشاريع الطرق والأسفلت وفق أعلى معايير الجودة    
-      والسلامة، مع التزام كامل بدقة التنفيذ وتنظيم العمل.    
-    </p>    
-  </div>    
-</section>    <!-- Services -->    <section class="section">    
-  <h2>خدماتنا</h2>      <div class="grid">    <div class="card">    
-  <h3>الطرق والأسفلت</h3>    
-  <p>    
-    تنفيذ أعمال السفلتة للمخططات والمواقف والساحات    
-    من التجهيز حتى الطبقة النهائية.    
-  </p>    
-</div>    
+<!-- ===== الخدمات ===== -->
+<section class="section">
+  <h2>خدماتنا</h2>
 
-<div class="card">    
-  <h3>البنية التحتية</h3>    
-  <p>    
-    تنفيذ شبكات المياه والصرف وتصريف السيول    
-    وتجهيز المخططات السكنية.    
-  </p>    
-</div>    
+  <div class="grid">
 
-<div class="card">    
-  <h3>الإنشاءات</h3>    
-  <p>    
-    تنفيذ المباني والمرافق والساحات    
-    بإشراف هندسي وتنظيم موقع احترافي.    
-  </p>    
+    <div class="card">
+      <h3>الطرق والأسفلت</h3>
+      <p>تنفيذ أعمال السفلتة للمخططات والمواقف والساحات بجودة عالية.</p>
+    </div>
+
+    <div class="card">
+      <h3>البنية التحتية</h3>
+      <p>تنفيذ شبكات المياه والصرف وتصريف السيول وتجهيز المخططات.</p>
+    </div>
+
+    <div class="card">
+      <h3>الإنشاءات</h3>
+      <p>تنفيذ المباني والمرافق والساحات بإشراف هندسي احترافي.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta">
+  <a class="btn" href="contact.html">اطلب عرض سعر</a>
+  <a class="btn" href="gallery.html">استعرض المشاريع</a>
 </div>
 
-  </div>    
-</section>    <!-- Why Us -->    <section class="section">    
-  <h2>لماذا هيلز هوم؟</h2>      <div class="grid">    <div class="card">    
-  <h3>جودة التنفيذ</h3>    
-  <p>تنفيذ مطابق للمواصفات الفنية والمعايير المعتمدة.</p>    
-</div>    
+<footer>
+© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة
+</footer>
 
-<div class="card">    
-  <h3>إدارة منظمة</h3>    
-  <p>تخطيط وإشراف وتنظيم موارد بكفاءة عالية.</p>    
-</div>    
-
-<div class="card">    
-  <h3>التزام بالتسليم</h3>    
-  <p>إنجاز المشاريع وفق نطاق العمل المتفق عليه.</p>    
-</div>
-
-  </div>    
-</section>    <!-- CTA -->    <div class="cta">    
-  <a class="btn" href="contact.html">اطلب عرض سعر</a>    
-  <a class="btn" href="gallery.html">استعرض المشاريع</a>    
-</div>    <footer>    
-© شركة هيلز هوم للمقاولات العامة — جميع الحقوق محفوظة    
-</footer>    </body>    
+</body>
 </html>
