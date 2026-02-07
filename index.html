@@ -223,6 +223,16 @@
       window.open(url, "_blank");
     }
   </script>
+<script>
+window.addEventListener("scroll", function(){
+  const header = document.getElementById("smartHeader");
 
+  if(window.scrollY > 100){
+    header.classList.add("scrolled");
+  }else{
+    header.classList.remove("scrolled");
+  }
+});
+</script>
 </body>
 </html>
