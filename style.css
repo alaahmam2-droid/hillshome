@@ -251,3 +251,118 @@ footer{
   }
 
 }
+/* ===== Readability + Calm Cards (Services) ===== */
+:root{
+  --read: #d7e3f5;          /* لون نص مريح */
+  --cardSoft: rgba(255,255,255,.035);
+  --cardSoft2: rgba(255,255,255,.045);
+  --cardBorder: rgba(255,255,255,.075);
+}
+
+body{
+  line-height: 1.9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* عناوين أنعم */
+.section h2{
+  letter-spacing: .2px;
+}
+
+/* كروت خدمات خفيفة وواضحة */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+
+.service-card{
+  background: linear-gradient(180deg, var(--cardSoft), rgba(255,255,255,.02));
+  border: 1px solid var(--cardBorder);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.service-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(245,158,11,.30);
+  background: linear-gradient(180deg, var(--cardSoft2), rgba(255,255,255,.02));
+}
+
+.service-card h3{
+  margin:0;
+  font-size:16px;
+  color:#fff;
+}
+
+.service-card p{
+  margin:8px 0 0;
+  color: var(--read);
+  font-size: 13.5px;
+}
+
+.service-card ul{
+  margin:10px 0 0;
+  padding: 0 18px 0 0;
+  color: var(--read);
+  font-size: 13px;
+}
+
+.service-card li{ margin:3px 0; }
+
+/* أيقونة صغيرة وهادئة */
+.svc-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+.svc-ico{
+  width:40px;height:40px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  background: rgba(245,158,11,.10);
+  border: 1px solid rgba(245,158,11,.22);
+  flex:0 0 auto;
+}
+
+/* زر واحد واضح */
+.single-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 18px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  background: var(--gold);
+  color:#111827;
+  border:1px solid var(--gold);
+  transition:.2s;
+}
+.single-btn:hover{ transform: translateY(-2px); }
+
+.one-cta{
+  text-align:center;
+  margin-top:22px;
+}
+.one-cta p{
+  margin:0 0 10px;
+  color: var(--muted);
+  font-size:14px;
+}
+
+/* موبايل: مسافات أحسن */
+@media (max-width:600px){
+  .service-card{ padding:14px; }
+  .service-card p{ font-size:13px; }
+}
