@@ -6,169 +6,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 
-  <!-- إضافات بسيطة للكروت + المودال (بدون تعديل style.css) -->
   <style>
-    /* تحسينات الكروت */
-    .service-card{
+    /* كروت احترافية خفيفة */
+    .services-wrap{ padding-top:10px; }
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+    .svc-card{
+      background:rgba(2,6,23,.55);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:16px;
+      transition:.2s;
       position:relative;
       overflow:hidden;
-      padding:18px 18px 16px;
     }
-    .service-card::before{
+    .svc-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(245,158,11,.60);
+      background:rgba(2,6,23,.62);
+    }
+
+    /* شريط ذهبي خفيف أعلى الكرت */
+    .svc-card::before{
       content:"";
       position:absolute;
-      inset:-2px;
-      background: radial-gradient(600px 240px at 10% 10%, rgba(245,158,11,.16), transparent 55%);
-      opacity:.9;
-      pointer-events:none;
+      top:0; right:0; left:0;
+      height:3px;
+      background:linear-gradient(90deg, rgba(245,158,11,.0), rgba(245,158,11,.9), rgba(245,158,11,.0));
+      opacity:.85;
     }
-    .card-top{
-      position:relative;
+
+    .svc-head{
       display:flex;
       align-items:flex-start;
-      gap:12px;
+      gap:10px;
       margin-bottom:10px;
     }
-    .icon-badge{
-      width:44px;height:44px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
+    .svc-ico{
+      width:42px; height:42px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
       background:rgba(245,158,11,.12);
       border:1px solid rgba(245,158,11,.35);
       flex:0 0 auto;
     }
-    .icon-badge svg{width:22px;height:22px;opacity:.95}
-    .service-card h3{margin:0}
-    .service-card p{margin:6px 0 0}
+    .svc-title{
+      margin:0;
+      font-size:17px;
+      color:#fff;
+      line-height:1.35;
+    }
+    .svc-sub{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
 
-    .chips{
-      position:relative;
+    .svc-list{
+      margin:10px 0 0;
+      padding:0 18px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.9;
+    }
+    .svc-list li{ margin:4px 0; }
+
+    .svc-meta{
       display:flex;
-      flex-wrap:wrap;
       gap:8px;
+      flex-wrap:wrap;
       margin-top:12px;
     }
-    .chip{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      padding:7px 10px;
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
       border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
     }
+    .tag b{ color:#fff; font-weight:800; }
 
-    .card-actions{
-      position:relative;
-      display:flex;
-      gap:10px;
-      margin-top:14px;
-      flex-wrap:wrap;
+    /* زر واحد فقط */
+    .one-cta{
+      text-align:center;
+      margin-top:22px;
     }
-    .mini-btn{
+    .one-cta p{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.85;
+    }
+    .single-btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:#fff;
+      padding:13px 18px;
+      border-radius:14px;
       text-decoration:none;
       font-weight:900;
-      font-size:13px;
-      cursor:pointer;
+      font-size:14px;
+      background:var(--gold);
+      color:#111827;
+      border:1px solid var(--gold);
       transition:.2s;
     }
-    .mini-btn:hover{
-      border-color:rgba(245,158,11,.85);
-      background:rgba(255,255,255,.06);
-      transform:translateY(-2px);
-    }
-    .mini-btn.primary{
-      background:rgba(245,158,11,.95);
-      border-color:rgba(245,158,11,.95);
-      color:#111827;
-    }
-    .mini-btn.primary:hover{transform:translateY(-2px)}
-
-    /* مودال تفاصيل */
-    .modal-backdrop{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.55);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      z-index:2000;
-      padding:18px;
-    }
-    .modal-backdrop.open{display:flex}
-    .modal{
-      width:min(820px,100%);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      box-shadow:0 18px 55px rgba(0,0,0,.45);
-      overflow:hidden;
-    }
-    .modal-head{
-      padding:14px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      background:rgba(2,6,23,.55);
-      backdrop-filter: blur(10px);
-    }
-    .modal-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-    }
-    .close-btn{
-      width:38px;height:38px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      cursor:pointer;
-      font-size:18px;
-    }
-    .close-btn:hover{border-color:rgba(245,158,11,.85)}
-    .modal-body{
-      padding:16px;
-      color:var(--muted);
-      line-height:1.95;
-    }
-    .modal-body h4{
-      margin:0 0 10px;
-      color:#ffe2a5;
-    }
-    .modal-list{
-      margin:10px 0 0;
-      padding-right:18px;
-      color:#dfe7ff;
-    }
-    .modal-list li{margin:6px 0}
-    .modal-foot{
-      padding:14px 16px;
-      border-top:1px solid rgba(255,255,255,.08);
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-start;
-      background:rgba(2,6,23,.45);
-    }
+    .single-btn:hover{ transform:translateY(-2px); }
   </style>
 </head>
 
 <body>
 
-<!-- ===== HEADER (بدون شعار) ===== -->
+<!-- HEADER (بدون شعار) -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="brand">هيلز هوم للمقاولات العامة</a>
@@ -184,363 +145,155 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero small">
   <div class="container">
     <h1>خدماتنا</h1>
     <p>
-      خدمات مقاولات متكاملة في الطرق والأسفلت والبنية التحتية والإنشاءات،
-      مع التزام بالمواصفات والجودة والسلامة وتنظيم موقع احترافي.
+      نقدم خدمات مقاولات متكاملة في الطرق والأسفلت والبنية التحتية والإنشاءات،
+      مع التزام بالمواصفات وجودة التنفيذ وتنظيم الموقع.
     </p>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
+<!-- SERVICES -->
 <section class="section">
-  <div class="container">
+  <div class="container services-wrap">
 
     <div class="services-grid">
 
-      <!-- 1 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Road -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10 2h4l2 20h-4l-1-6-1 6H6L10 2Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M12 7v2M12 11v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">🛣️</div>
           <div>
-            <h3>الطرق والأسفلت</h3>
-            <p>سفلتة مخططات وطرق داخلية ومواقف وساحات من التجهيز حتى الطبقة النهائية.</p>
+            <h3 class="svc-title">الطرق والأسفلت</h3>
+            <p class="svc-sub">تنفيذ سفلتة طرق ومواقف وساحات وفق المعايير.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">تجهيز + دمك</span>
-          <span class="chip">طبقات أساس</span>
-          <span class="chip">تشغيل احترافي</span>
+        <ul class="svc-list">
+          <li>سفلتة مخططات وطرق داخلية</li>
+          <li>سفلتة مواقف سيارات وساحات</li>
+          <li>فرش ودمك الطبقات حسب المتطلبات</li>
+          <li>معالجة النقاط والتحسينات قبل التسليم</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">🎯 <b>تركيز:</b> جودة</span>
+          <span class="tag">⏱️ <b>أولوية:</b> سرعة</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('الطرق والأسفلت','تنفيذ أعمال السفلتة بجودة عالية وفق المواصفات، بدءًا من تجهيز التربة وطبقات الأساس وحتى الطبقة النهائية، مع تنظيم الموقع وضبط المناسيب.', ['سفلتة مخططات وطرق داخلية','سفلتة مواقف وساحات ومنشآت','معالجة هبوطات وتحسين منسوب','تجهيز طبقات الأساس والدمك'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Compactor -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 14h11l2 3H4v-3Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M15 14V9h3l2 5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M6 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M18 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">🧱</div>
           <div>
-            <h3>تجهيز طبقات الأساس</h3>
-            <p>دفان وتسوية ودمك وتجهيز بيسكورس قبل السفلتة لضمان ثبات وجودة.</p>
+            <h3 class="svc-title">تجهيز طبقات الأساس</h3>
+            <p class="svc-sub">تجهيز الموقع قبل السفلتة لضمان الثبات.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">تسوية</span>
-          <span class="chip">بيسكورس</span>
-          <span class="chip">اختبارات عند الطلب</span>
+        <ul class="svc-list">
+          <li>دفان وتسوية وضبط منسوب</li>
+          <li>دمك ميكانيكي حسب الحاجة</li>
+          <li>تنفيذ بيسكورس وتجهيز للطبقة النهائية</li>
+          <li>ضبط ميول وتصريف مناسب</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">✅ <b>مخرجات:</b> ثبات</span>
+          <span class="tag">📏 <b>دقة:</b> مناسيب</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('تجهيز طبقات الأساس','نبدأ بتجهيز التربة وتسوية المناسيب، ثم تنفيذ طبقات الدفان والبيسكورس مع الدمك، لضمان قاعدة صلبة تقلل الهبوطات وترفع جودة السطح النهائي.', ['دفان وردم وتسوية','تنفيذ طبقات بيسكورس','دمك وتجهيز المناسيب','تهيئة قبل السفلتة'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Repair -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M3 20h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M7 20l2-10h6l2 10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M9 8l3-4 3 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">🌊</div>
           <div>
-            <h3>إعادة تأهيل الطرق</h3>
-            <p>كشط الأسفلت القديم ومعالجة الهبوطات ثم إعادة السفلتة وتحسين الأداء.</p>
+            <h3 class="svc-title">أعمال البنية التحتية</h3>
+            <p class="svc-sub">حلول شبكات ومرافق لمشاريع التطوير.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">كشط</span>
-          <span class="chip">معالجة هبوطات</span>
-          <span class="chip">رفع كفاءة</span>
+        <ul class="svc-list">
+          <li>شبكات مياه وصرف صحي</li>
+          <li>تصريف سيول وتمديدات</li>
+          <li>تجهيز مخططات وتطوير مواقع</li>
+          <li>أعمال ردم وإعادة تأهيل</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">🧩 <b>نطاق:</b> متكامل</span>
+          <span class="tag">🛠️ <b>تنفيذ:</b> ميداني</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('إعادة تأهيل الطرق','ننفذ أعمال إعادة التأهيل بدءًا من إزالة الطبقات المتضررة، ومعالجة السبب الجذري للهبوطات، ثم إعادة السفلتة بما يضمن تحسن المتانة والاستخدام.', ['كشط وإزالة طبقات متضررة','معالجة هبوطات وتشوهات','إعادة سفلتة وتحسين منسوب','حلول مناسبة للمواقع القائمة'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Infrastructure -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 18V6l8-3 8 3v12l-8 3-8-3Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M8 10h8M8 14h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">⛏️</div>
           <div>
-            <h3>البنية التحتية</h3>
-            <p>شبكات مياه وصرف وتصريف سيول وتجهيز مخططات وفق المخططات المعتمدة.</p>
+            <h3 class="svc-title">الحفر والردم وتسوية الأراضي</h3>
+            <p class="svc-sub">تهيئة المواقع وضبط المناسيب بأمان.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">مياه/صرف</span>
-          <span class="chip">سيول</span>
-          <span class="chip">غرف تفتيش</span>
+        <ul class="svc-list">
+          <li>حفر وردم وتنفيذ طبقات</li>
+          <li>تسوية أرضيات وتجهيز ساحات</li>
+          <li>ضبط مناسيب وميول</li>
+          <li>رفع مخلفات وتسليم موقع منظم</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">📍 <b>هدف:</b> جاهزية</span>
+          <span class="tag">🧯 <b>التزام:</b> سلامة</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('البنية التحتية','تنفيذ شبكات البنية التحتية بأعمال الحفر والتمديدات والردم، مع الالتزام بالمناسيب والحماية والتنظيم، لتجهيز الموقع بكفاءة قبل أعمال الطرق أو الإنشاءات.', ['شبكات مياه وصرف صحي','تصريف سيول وغرف تفتيش','حفر وردم وتجهيز الموقع','تجهيز مخططات ومرافق'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Excavation -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 18h6l2-3h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M10 15l2-4 3-2 4 3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M6 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">🏗️</div>
           <div>
-            <h3>أعمال الحفر والردم</h3>
-            <p>تسوية أراضٍ وتجهيز مواقع مع الردم والدمك لتحقيق منسوب صحيح للتنفيذ.</p>
+            <h3 class="svc-title">الإنشاءات والمرافق</h3>
+            <p class="svc-sub">تنفيذ أعمال إنشائية بإشراف هندسي.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">تسوية</span>
-          <span class="chip">ردم</span>
-          <span class="chip">مناسيب</span>
+        <ul class="svc-list">
+          <li>أعمال خرسانات وقواعد</li>
+          <li>تنفيذ مرافق وخدمات مساندة</li>
+          <li>تنظيم الموقع وإدارة الموارد</li>
+          <li>متابعة الجودة حتى التسليم</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">👷 <b>فريق:</b> خبرة</span>
+          <span class="tag">📋 <b>إدارة:</b> منظمة</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('أعمال الحفر والردم','ننفذ الحفر والردم وتسوية الأراضي وتجهيز المناسيب، بما يدعم جودة مراحل المشروع التالية ويقلل مشاكل الهبوطات أو التجمعات.', ['حفر وتسوية مواقع','ردم ودمك طبقات','تجهيز المناسيب','تهيئة قبل التنفيذ'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Construction -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 20V10l8-6 8 6v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
+      <article class="svc-card">
+        <div class="svc-head">
+          <div class="svc-ico">🚧</div>
           <div>
-            <h3>الإنشاءات الخرسانية</h3>
-            <p>تنفيذ قواعد ومباني ومرافق وساحات بإشراف هندسي وتنظيم موقع احترافي.</p>
+            <h3 class="svc-title">تخطيط ودهانات الطرق</h3>
+            <p class="svc-sub">حلول تخطيط مروري للمواقف والطرق.</p>
           </div>
         </div>
-
-        <div class="chips">
-          <span class="chip">خرسانة</span>
-          <span class="chip">قواعد</span>
-          <span class="chip">مرافق</span>
+        <ul class="svc-list">
+          <li>تخطيط مواقف وممرات</li>
+          <li>دهانات طرق وعلامات إرشادية</li>
+          <li>عناصر سلامة مرورية</li>
+          <li>تنفيذ مرتب مع وضوح بصري</li>
+        </ul>
+        <div class="svc-meta">
+          <span class="tag">👁️ <b>وضوح:</b> عالي</span>
+          <span class="tag">🟨 <b>هوية:</b> مرورية</span>
         </div>
+      </article>
 
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('الإنشاءات الخرسانية','ننفذ الأعمال الخرسانية والإنشائية حسب نطاق المشروع، مع ضبط جودة التنفيذ والتنسيق بين الفرق لضمان تقدم منظم وتسليم احترافي.', ['قواعد وهياكل خرسانية','ملاحق ومرافق وساحات','تنظيم موقع وإشراف هندسي','جودة وتنفيذ وفق النطاق'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
+    </div>
 
-      <!-- 7 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Marking -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 19l6-6 3 3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14 7h6v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>تخطيط ودهانات الطرق</h3>
-            <p>دهانات وتخطيط للمواقف والطرق وعلامات السلامة المرورية حسب المتطلبات.</p>
-          </div>
-        </div>
-
-        <div class="chips">
-          <span class="chip">مواقف</span>
-          <span class="chip">سلامة</span>
-          <span class="chip">علامات</span>
-        </div>
-
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('تخطيط ودهانات الطرق','تنفيذ أعمال التخطيط والدهانات للطرق والمواقف، بما يدعم السلامة والتنظيم ويوضح المسارات والمواقف والعلامات بشكل احترافي.', ['تخطيط مواقف','دهانات طرق ومسارات','علامات سلامة مرورية','تنفيذ حسب المخطط'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <!-- Management -->
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M7 7h10M7 12h10M7 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M4 5h2v14H4V5Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M18 16l2 2 3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>إدارة المشاريع</h3>
-            <p>تنظيم الموقع والإشراف وضبط الجودة والتنسيق مع العميل حتى التسليم النهائي.</p>
-          </div>
-        </div>
-
-        <div class="chips">
-          <span class="chip">تنظيم موقع</span>
-          <span class="chip">جودة</span>
-          <span class="chip">تسليم</span>
-        </div>
-
-        <div class="card-actions">
-          <button class="mini-btn" type="button"
-            onclick="openService('إدارة المشاريع','إدارة تنفيذ المشروع بشكل منظم: خطط، وجدولة، متابعة الجودة، وتقارير واضحة، لضمان تنفيذ فعّال وتقليل المخاطر.', ['تنظيم وإشراف ميداني','متابعة جودة التنفيذ','تنسيق مع العميل والاستشاري','تسليم منظم حسب النطاق'])">
-            تفاصيل
-          </button>
-          <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-        </div>
-      </div>
-
+    <!-- زر واحد فقط -->
+    <div class="one-cta">
+      <p>جاهزين لاستلام تفاصيل مشروعك والرد بسرعة.</p>
+      <a class="single-btn" href="contact.html">تواصل معنا</a>
     </div>
 
   </div>
 </section>
 
-<!-- ===== WHY US (Cards) ===== -->
-<section class="section dark">
-  <div class="container">
-    <h2>لماذا تختار هيلز هوم؟</h2>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M20 7l-9 10-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>جودة التنفيذ</h3>
-            <p>التزام بالمواصفات الفنية والمعايير المعتمدة.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 20V6l8-3 8 3v14" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M8 12h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>إدارة منظمة</h3>
-            <p>تنظيم موارد وجدولة تضمن تقدمًا واضحًا بالموقع.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 3v9l6 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M21 12a9 9 0 1 1-9-9" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div>
-            <h3>التزام بالتسليم</h3>
-            <p>تنفيذ ضمن نطاق العمل المتفق عليه وبمستوى احترافي.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-top">
-          <div class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 2l8 4v6c0 5-3 9-8 10-5-1-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3>سلامة وتنظيم</h3>
-            <p>اهتمام بسلامة الموقع وتنظيم حركة العمل.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="section">
-  <div class="container">
-    <h2>جاهزون لتنفيذ مشروعك</h2>
-    <p>أرسل تفاصيل مشروعك وسنرد بسرعة عبر واتساب أو اتصال.</p>
-    <a href="contact.html" class="btn-primary">تواصل معنا</a>
-  </div>
-</section>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/966540671117" class="whatsapp-float" target="_blank">💬</a>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <div>
@@ -550,60 +303,6 @@
     <div>© جميع الحقوق محفوظة</div>
   </div>
 </footer>
-
-<!-- ===== MODAL ===== -->
-<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="تفاصيل الخدمة">
-  <div class="modal">
-    <div class="modal-head">
-      <div class="modal-title" id="modalTitle">تفاصيل</div>
-      <button class="close-btn" type="button" onclick="closeModal()" aria-label="إغلاق">×</button>
-    </div>
-    <div class="modal-body">
-      <p id="modalDesc" style="margin:0 0 10px;"></p>
-      <h4>يشمل:</h4>
-      <ul class="modal-list" id="modalList"></ul>
-    </div>
-    <div class="modal-foot">
-      <a class="mini-btn primary" href="contact.html">تواصل الآن</a>
-      <button class="mini-btn" type="button" onclick="closeModal()">إغلاق</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  const backdrop = document.getElementById('modalBackdrop');
-  const mTitle = document.getElementById('modalTitle');
-  const mDesc  = document.getElementById('modalDesc');
-  const mList  = document.getElementById('modalList');
-
-  function openService(title, desc, items){
-    mTitle.textContent = title;
-    mDesc.textContent  = desc;
-
-    mList.innerHTML = '';
-    items.forEach(t=>{
-      const li = document.createElement('li');
-      li.textContent = t;
-      mList.appendChild(li);
-    });
-
-    backdrop.classList.add('open');
-  }
-
-  function closeModal(){
-    backdrop.classList.remove('open');
-  }
-
-  // إغلاق عند الضغط خارج المودال
-  backdrop.addEventListener('click', (e)=>{
-    if(e.target === backdrop) closeModal();
-  });
-
-  // إغلاق بالـ ESC
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape') closeModal();
-  });
-</script>
 
 </body>
 </html>
