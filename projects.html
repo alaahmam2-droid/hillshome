@@ -7,98 +7,65 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* كروت احترافية خفيفة */
-    .services-wrap{ padding-top:10px; }
+    /* خفيف + مرتب */
     .services-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:14px;
-      margin-top:16px;
+      margin-top:18px;
     }
-    .svc-card{
-      background:rgba(2,6,23,.55);
-      border:1px solid rgba(255,255,255,.10);
+    .svc{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:16px;
       padding:16px;
-      transition:.2s;
-      position:relative;
-      overflow:hidden;
+      transition:.18s ease;
     }
-    .svc-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(245,158,11,.60);
-      background:rgba(2,6,23,.62);
-    }
-
-    /* شريط ذهبي خفيف أعلى الكرت */
-    .svc-card::before{
-      content:"";
-      position:absolute;
-      top:0; right:0; left:0;
-      height:3px;
-      background:linear-gradient(90deg, rgba(245,158,11,.0), rgba(245,158,11,.9), rgba(245,158,11,.0));
-      opacity:.85;
+    .svc:hover{
+      transform:translateY(-3px);
+      border-color:rgba(245,158,11,.35);
+      background:rgba(255,255,255,.04);
     }
 
     .svc-head{
       display:flex;
-      align-items:flex-start;
+      align-items:center;
       gap:10px;
       margin-bottom:10px;
     }
     .svc-ico{
-      width:42px; height:42px;
+      width:40px;height:40px;
       border-radius:12px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:20px;
-      background:rgba(245,158,11,.12);
-      border:1px solid rgba(245,158,11,.35);
+      font-size:18px;
+      background:rgba(245,158,11,.10);
+      border:1px solid rgba(245,158,11,.25);
       flex:0 0 auto;
     }
-    .svc-title{
+    .svc h3{
       margin:0;
-      font-size:17px;
+      font-size:16px;
       color:#fff;
-      line-height:1.35;
+      line-height:1.3;
     }
-    .svc-sub{
-      margin:2px 0 0;
+    .svc p{
+      margin:8px 0 0;
       color:var(--muted);
       font-size:13px;
-      line-height:1.7;
+      line-height:1.85;
     }
-
-    .svc-list{
+    .svc ul{
       margin:10px 0 0;
       padding:0 18px 0 0;
       color:var(--muted);
       font-size:13px;
       line-height:1.9;
     }
-    .svc-list li{ margin:4px 0; }
+    .svc li{ margin:3px 0; }
 
-    .svc-meta{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:12px;
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:12px;
-    }
-    .tag b{ color:#fff; font-weight:800; }
-
-    /* زر واحد فقط */
+    /* زر واحد */
     .one-cta{
       text-align:center;
       margin-top:22px;
@@ -124,6 +91,11 @@
       transition:.2s;
     }
     .single-btn:hover{ transform:translateY(-2px); }
+
+    /* تخفيف الـ hero في هذه الصفحة فقط */
+    .hero.small{ padding:42px 0; }
+    .hero.small p{ max-width:820px; }
+
   </style>
 </head>
 
@@ -156,135 +128,92 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- CONTENT -->
 <section class="section">
-  <div class="container services-wrap">
+  <div class="container">
 
     <div class="services-grid">
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">🛣️</div>
-          <div>
-            <h3 class="svc-title">الطرق والأسفلت</h3>
-            <p class="svc-sub">تنفيذ سفلتة طرق ومواقف وساحات وفق المعايير.</p>
-          </div>
+          <h3>الطرق والأسفلت</h3>
         </div>
-        <ul class="svc-list">
+        <p>تنفيذ سفلتة طرق ومواقف وساحات من التجهيز حتى الطبقة النهائية.</p>
+        <ul>
           <li>سفلتة مخططات وطرق داخلية</li>
-          <li>سفلتة مواقف سيارات وساحات</li>
-          <li>فرش ودمك الطبقات حسب المتطلبات</li>
-          <li>معالجة النقاط والتحسينات قبل التسليم</li>
+          <li>سفلتة مواقف وساحات</li>
+          <li>دمك ومعالجة وتحسين قبل التسليم</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">🎯 <b>تركيز:</b> جودة</span>
-          <span class="tag">⏱️ <b>أولوية:</b> سرعة</span>
-        </div>
       </article>
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">🧱</div>
-          <div>
-            <h3 class="svc-title">تجهيز طبقات الأساس</h3>
-            <p class="svc-sub">تجهيز الموقع قبل السفلتة لضمان الثبات.</p>
-          </div>
+          <h3>تجهيز طبقات الأساس</h3>
         </div>
-        <ul class="svc-list">
+        <p>تهيئة الموقع وضبط المناسيب لضمان ثبات وجودة أعمال السفلتة.</p>
+        <ul>
           <li>دفان وتسوية وضبط منسوب</li>
-          <li>دمك ميكانيكي حسب الحاجة</li>
-          <li>تنفيذ بيسكورس وتجهيز للطبقة النهائية</li>
+          <li>فرش ودمك بيسكورس</li>
           <li>ضبط ميول وتصريف مناسب</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">✅ <b>مخرجات:</b> ثبات</span>
-          <span class="tag">📏 <b>دقة:</b> مناسيب</span>
-        </div>
       </article>
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">🌊</div>
-          <div>
-            <h3 class="svc-title">أعمال البنية التحتية</h3>
-            <p class="svc-sub">حلول شبكات ومرافق لمشاريع التطوير.</p>
-          </div>
+          <h3>أعمال البنية التحتية</h3>
         </div>
-        <ul class="svc-list">
-          <li>شبكات مياه وصرف صحي</li>
+        <p>تنفيذ شبكات ومرافق لمشاريع التطوير وفق متطلبات المخططات.</p>
+        <ul>
+          <li>شبكات مياه وصرف</li>
           <li>تصريف سيول وتمديدات</li>
-          <li>تجهيز مخططات وتطوير مواقع</li>
-          <li>أعمال ردم وإعادة تأهيل</li>
+          <li>ردم وإعادة تأهيل</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">🧩 <b>نطاق:</b> متكامل</span>
-          <span class="tag">🛠️ <b>تنفيذ:</b> ميداني</span>
-        </div>
       </article>
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">⛏️</div>
-          <div>
-            <h3 class="svc-title">الحفر والردم وتسوية الأراضي</h3>
-            <p class="svc-sub">تهيئة المواقع وضبط المناسيب بأمان.</p>
-          </div>
+          <h3>الحفر والردم وتسوية الأراضي</h3>
         </div>
-        <ul class="svc-list">
+        <p>تجهيز مواقع الأعمال وتسوية الأراضي وإدارة المخلفات بشكل منظم.</p>
+        <ul>
           <li>حفر وردم وتنفيذ طبقات</li>
-          <li>تسوية أرضيات وتجهيز ساحات</li>
-          <li>ضبط مناسيب وميول</li>
-          <li>رفع مخلفات وتسليم موقع منظم</li>
+          <li>تسوية وتجهيز ساحات</li>
+          <li>رفع مخلفات وتسليم موقع مرتب</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">📍 <b>هدف:</b> جاهزية</span>
-          <span class="tag">🧯 <b>التزام:</b> سلامة</span>
-        </div>
       </article>
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">🏗️</div>
-          <div>
-            <h3 class="svc-title">الإنشاءات والمرافق</h3>
-            <p class="svc-sub">تنفيذ أعمال إنشائية بإشراف هندسي.</p>
-          </div>
+          <h3>الإنشاءات والمرافق</h3>
         </div>
-        <ul class="svc-list">
-          <li>أعمال خرسانات وقواعد</li>
+        <p>تنفيذ أعمال إنشائية بإشراف هندسي وتنظيم موقع احترافي.</p>
+        <ul>
+          <li>خرسانات وقواعد</li>
           <li>تنفيذ مرافق وخدمات مساندة</li>
-          <li>تنظيم الموقع وإدارة الموارد</li>
-          <li>متابعة الجودة حتى التسليم</li>
+          <li>متابعة جودة حتى التسليم</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">👷 <b>فريق:</b> خبرة</span>
-          <span class="tag">📋 <b>إدارة:</b> منظمة</span>
-        </div>
       </article>
 
-      <article class="svc-card">
+      <article class="svc">
         <div class="svc-head">
           <div class="svc-ico">🚧</div>
-          <div>
-            <h3 class="svc-title">تخطيط ودهانات الطرق</h3>
-            <p class="svc-sub">حلول تخطيط مروري للمواقف والطرق.</p>
-          </div>
+          <h3>تخطيط ودهانات الطرق</h3>
         </div>
-        <ul class="svc-list">
+        <p>حلول تخطيط مروري للمواقف والطرق لرفع السلامة والوضوح.</p>
+        <ul>
           <li>تخطيط مواقف وممرات</li>
-          <li>دهانات طرق وعلامات إرشادية</li>
-          <li>عناصر سلامة مرورية</li>
-          <li>تنفيذ مرتب مع وضوح بصري</li>
+          <li>دهانات وعلامات إرشادية</li>
+          <li>تنفيذ مرتب ووضوح عالي</li>
         </ul>
-        <div class="svc-meta">
-          <span class="tag">👁️ <b>وضوح:</b> عالي</span>
-          <span class="tag">🟨 <b>هوية:</b> مرورية</span>
-        </div>
       </article>
 
     </div>
 
-    <!-- زر واحد فقط -->
     <div class="one-cta">
       <p>جاهزين لاستلام تفاصيل مشروعك والرد بسرعة.</p>
       <a class="single-btn" href="contact.html">تواصل معنا</a>
@@ -292,6 +221,9 @@
 
   </div>
 </section>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/966540671117" class="whatsapp-float" target="_blank">💬</a>
 
 <!-- FOOTER -->
 <footer class="site-footer">
